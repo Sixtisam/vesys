@@ -7,10 +7,9 @@ package bank.local;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import bank.InactiveException;
 import bank.OverdrawException;
@@ -35,39 +34,41 @@ public class Driver implements bank.BankDriver {
 		return bank;
 	}
 
-	public static class Bank implements bank.Bank {
+	public class Bank implements bank.Bank {
 
-		private final Map<String, Account> accounts = new HashMap<>();
+		private final HashMap<String, Account> accounts = new HashMap<>();
 
 		@Override
 		public Set<String> getAccountNumbers() {
-			return accounts.keySet();
+			return accounts.entrySet().stream()
+					.filter(e -> e.getValue().isActive())
+					.map(e -> e.getKey())
+					.collect(Collectors.toSet());
 		}
 
 		@Override
 		public String createAccount(String owner) {
-			String accNr;
-			while (accounts.containsKey(accNr = UUID.randomUUID().toString())) {
-				// nop
-			}
-			accounts.put(accNr, new Account(accNr, owner));
-			return accNr;
+			// ensure account number is unique
+			Account account;
+			do {
+				account = new Account(UUID.randomUUID().toString(), owner);
+			} while (accounts.putIfAbsent(account.getNumber(), account) != null);
+
+			return account.getNumber();
 		}
 
 		@Override
 		public boolean closeAccount(String number) {
 			Account acc = accounts.get(number);
-			Objects.requireNonNull(acc);
-
-			if (acc.getBalance() == 0.0) {
-				acc.active = false;
-				return true;
+			if (acc != null) {
+				return acc.close();
+			} else {
+				return false;
 			}
-			return false;
 		}
 
 		@Override
-		public bank.Account getAccount(String number) {
+		public Account getAccount(String number) throws IOException {
 			return accounts.get(number);
 		}
 
@@ -75,18 +76,27 @@ public class Driver implements bank.BankDriver {
 		public void transfer(bank.Account from, bank.Account to, double amount)
 				throws IOException, InactiveException, OverdrawException {
 			from.withdraw(amount);
-			to.deposit(amount);
+			try {
+				to.deposit(amount);
+			} catch (Exception e) {
+				from.deposit(amount);
+				throw e;
+			}
 		}
 
 	}
 
-	private static class Account implements bank.Account {
+	/**
+	 * Account which is thread-safe
+	 *
+	 */
+	static class Account implements bank.Account {
 		private String number;
 		private String owner;
 		private double balance;
 		private boolean active = true;
 
-		private Account(String number, String owner) {
+		Account(String number, String owner) {
 			this.owner = owner;
 			this.number = number;
 		}
@@ -116,6 +126,10 @@ public class Driver implements bank.BankDriver {
 			if (!isActive()) {
 				throw new InactiveException();
 			}
+			if (amount < 0) {
+				throw new IllegalArgumentException("not possible to deposit negative");
+			}
+
 			balance += amount;
 		}
 
@@ -124,12 +138,22 @@ public class Driver implements bank.BankDriver {
 			if (!isActive()) {
 				throw new InactiveException();
 			}
+			if (amount < 0) {
+				throw new IllegalArgumentException("not allowed to withdraw negative");
+			}
 			if (getBalance() < amount) {
 				throw new OverdrawException();
 			}
 			balance -= amount;
 		}
 
+		public boolean close() {
+			if (getBalance() == 0.0 && isActive()) {
+				active = false;
+				return true;
+			}
+			return false;
+		}
 	}
 
 }
