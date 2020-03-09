@@ -1,4 +1,4 @@
-package bank.server;
+package bank.udp.server;
 
 import bank.InactiveException;
 import bank.OverdrawException;
@@ -8,8 +8,8 @@ import bank.OverdrawException;
  *
  */
 class ServerAccount implements bank.Account {
-	private final String number;
-	private final String owner;
+	private String number;
+	private String owner;
 	private double balance;
 	private boolean active = true;
 
@@ -24,12 +24,12 @@ class ServerAccount implements bank.Account {
 	}
 
 	@Override
-	public String getOwner() {
+	public synchronized String getOwner() {
 		return owner;
 	}
 
 	@Override
-	public String getNumber() {
+	public synchronized String getNumber() {
 		return number;
 	}
 

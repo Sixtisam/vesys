@@ -11,7 +11,7 @@ import bank.shared.BankAnswer;
 import bank.shared.BankAnswer.BankExceptionAnswer;
 import bank.shared.BankCommand;
 
-public class BankServer {
+public class TcpBankServer {
 	public static void main(String[] args) {
 		System.out.println("Initializing bank server...");
 		ExecutorService svc = Executors.newCachedThreadPool();
@@ -42,18 +42,15 @@ public class BankServer {
 		@Override
 		public void run() {
 			System.out.println("Client thread exeucting...");
-			try (ObjectInputStream in = new ObjectInputStream(socket.getInputStream())) {
-				try (ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream())) {
-					while (true) {
-						Object obj = in.readObject();
-						if (obj instanceof BankCommand) {
-							out.writeObject(processCommand((BankCommand<?>) obj));
-						} else {
-							System.err.println("Ignore non-bank command" + obj.getClass().getSimpleName());
-						}
+			try (ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+					ObjectInputStream in = new ObjectInputStream(socket.getInputStream())) {
+				while (true) {
+					Object obj = in.readObject();
+					if (obj instanceof BankCommand) {
+						out.writeObject(processCommand((BankCommand<?>) obj));
+					} else {
+						System.err.println("Ignore non-bank command" + obj.getClass().getSimpleName());
 					}
-				} finally {
-					// nop
 				}
 			} catch (Exception e) {
 				System.err.println("Unexpected exception in client handler");

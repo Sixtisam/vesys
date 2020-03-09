@@ -29,7 +29,7 @@ import bank.shared.BankCommand.BankCreateAccountCommand;
 import bank.shared.BankCommand.BankGetAccountNumbersCommand;
 import bank.shared.BankCommand.BankTransferCommand;
 
-public class Driver implements bank.BankDriver {
+public class TcpDriver implements bank.BankDriver {
 	private Bank bank = null;
 	private Socket socket;
 	private ObjectOutputStream out;
