@@ -137,7 +137,7 @@ public class TcpDriver implements bank.BankDriver {
 	}
 
 	private class RemoteAccount implements bank.Account {
-		private String number;
+		private final String number;
 
 		private RemoteAccount(String number) {
 			this.number = number;
