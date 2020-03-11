@@ -14,6 +14,10 @@ public class RichDataOutputStream extends DataOutputStream {
 	}
 
 	public final void writeString(String str) throws IOException {
+	    if(str == null) {
+	        writeInt(-1);
+	        return;
+	    }
 		if (str.length() > Integer.MAX_VALUE) {
 			throw new IllegalArgumentException("string too long");
 		}

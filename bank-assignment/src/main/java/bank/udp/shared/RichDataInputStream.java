@@ -16,7 +16,10 @@ public class RichDataInputStream extends DataInputStream {
 
 	public final String readString() throws IOException {
 		int length = readInt();
-
+		if(length == -1) {
+		    return null;
+		}
+		
 		char[] chars = new char[length];
 		for (int i = 0; i < length; i++) {
 			chars[i] = readChar();
