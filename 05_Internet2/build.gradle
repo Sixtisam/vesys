@@ -1,0 +1,50 @@
+plugins {
+	id 'java'
+	id 'war'
+}
+
+repositories {
+	jcenter()
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+dependencies {
+//  providedCompile 'jakarta.servlet:jakarta.servlet-api:5.0.0-M1'
+//	compile 'org.apache.tomcat.embed:tomcat-embed-core:10.0.0-M1'
+//	compile 'org.apache.tomcat.embed:tomcat-embed-jasper:10.0.0-M1'
+
+	compile 'org.apache.tomcat.embed:tomcat-embed-core:9.0.31'
+	compile 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.31'
+	
+	// JSON-RPC
+	compile 'com.github.briandilley.jsonrpc4j:jsonrpc4j:1.5.3'
+	compile 'com.fasterxml.jackson.core:jackson-databind:2.10.3'
+	compile 'javax.portlet:portlet-api:3.0.1'
+}
+
+war {
+	archiveFileName = "ds.war"
+	rootSpec.exclude("**/*.jar")
+}
+
+
+task gradleWrapper(type: Wrapper)
+task zip(type: Zip) {
+	dependsOn gradleWrapper
+	from projectDir
+
+	include 'build.gradle'
+	include 'gradle/**'
+	include 'gradlew'
+	include 'gradlew.bat'
+
+	include 'src/main/webapp/**'
+	include 'src/main/java/tomcat/**'
+	include 'src/main/java/ch/fhnw/ds/servlet/currency/**'
+	include 'src/main/java/ch/fhnw/ds/servlet/echo/**'
+	include 'src/main/java/ch/fhnw/ds/jsonrpc/**'
+}
