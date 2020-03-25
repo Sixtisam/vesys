@@ -1,4 +1,4 @@
-package bank.sockets;
+package bank.tcp.client;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -10,24 +10,24 @@ import java.util.Set;
 
 import bank.InactiveException;
 import bank.OverdrawException;
-import bank.shared.BankAnswer;
-import bank.shared.BankAnswer.BankExceptionAnswer;
-import bank.shared.BankAnswer.BooleanAnswer;
-import bank.shared.BankAnswer.DoubleAnswer;
-import bank.shared.BankAnswer.HashSetAnswer;
-import bank.shared.BankAnswer.OkAnswer;
-import bank.shared.BankAnswer.StringAnswer;
-import bank.shared.BankCommand;
-import bank.shared.BankCommand.BankAccountCloseCommand;
-import bank.shared.BankCommand.BankAccountExistsCommand;
-import bank.shared.BankCommand.BankAccountGetActiveCommand;
-import bank.shared.BankCommand.BankAccountGetBalanceCommand;
-import bank.shared.BankCommand.BankAccountGetOwnerCommand;
-import bank.shared.BankCommand.BankAccountModifyBalanceCommand;
-import bank.shared.BankCommand.BankAccountModifyBalanceCommand.Type;
-import bank.shared.BankCommand.BankCreateAccountCommand;
-import bank.shared.BankCommand.BankGetAccountNumbersCommand;
-import bank.shared.BankCommand.BankTransferCommand;
+import bank.tcp.shared.BankAnswer;
+import bank.tcp.shared.BankCommand;
+import bank.tcp.shared.BankAnswer.BankExceptionAnswer;
+import bank.tcp.shared.BankAnswer.BooleanAnswer;
+import bank.tcp.shared.BankAnswer.DoubleAnswer;
+import bank.tcp.shared.BankAnswer.HashSetAnswer;
+import bank.tcp.shared.BankAnswer.OkAnswer;
+import bank.tcp.shared.BankAnswer.StringAnswer;
+import bank.tcp.shared.BankCommand.BankAccountCloseCommand;
+import bank.tcp.shared.BankCommand.BankAccountExistsCommand;
+import bank.tcp.shared.BankCommand.BankAccountGetActiveCommand;
+import bank.tcp.shared.BankCommand.BankAccountGetBalanceCommand;
+import bank.tcp.shared.BankCommand.BankAccountGetOwnerCommand;
+import bank.tcp.shared.BankCommand.BankAccountModifyBalanceCommand;
+import bank.tcp.shared.BankCommand.BankCreateAccountCommand;
+import bank.tcp.shared.BankCommand.BankGetAccountNumbersCommand;
+import bank.tcp.shared.BankCommand.BankTransferCommand;
+import bank.tcp.shared.BankCommand.BankAccountModifyBalanceCommand.Type;
 
 public class TcpDriver implements bank.BankDriver {
 	private Bank bank = null;
@@ -196,6 +196,5 @@ public class TcpDriver implements bank.BankDriver {
 				throw new IOException(e);
 			}
 		}
-
 	}
 }

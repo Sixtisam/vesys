@@ -1,4 +1,4 @@
-package bank.server;
+package bank.tcp.server;
 
 import java.io.EOFException;
 import java.io.ObjectInputStream;
@@ -8,11 +8,11 @@ import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import bank.shared.BankAnswer;
-import bank.shared.BankAnswer.BankExceptionAnswer;
-import bank.shared.BankCommand;
+import bank.tcp.shared.BankAnswer;
+import bank.tcp.shared.BankCommand;
+import bank.tcp.shared.BankAnswer.BankExceptionAnswer;
 
-public class TcpBankServer {
+public class TcpServer {
     public static void main(String[] args) {
         System.out.println("Initializing bank server...");
         ExecutorService svc = Executors.newCachedThreadPool();

@@ -1,4 +1,4 @@
-package bank.shared;
+package bank.tcp.shared;
 
 import java.io.Serializable;
 import java.util.HashSet;

@@ -1,4 +1,4 @@
-package bank.shared;
+package bank.tcp.shared;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -7,12 +7,12 @@ import java.util.HashSet;
 import bank.Account;
 import bank.InactiveException;
 import bank.OverdrawException;
-import bank.server.ServerBank;
-import bank.shared.BankAnswer.BooleanAnswer;
-import bank.shared.BankAnswer.DoubleAnswer;
-import bank.shared.BankAnswer.HashSetAnswer;
-import bank.shared.BankAnswer.OkAnswer;
-import bank.shared.BankAnswer.StringAnswer;
+import bank.tcp.server.ServerBank;
+import bank.tcp.shared.BankAnswer.BooleanAnswer;
+import bank.tcp.shared.BankAnswer.DoubleAnswer;
+import bank.tcp.shared.BankAnswer.HashSetAnswer;
+import bank.tcp.shared.BankAnswer.OkAnswer;
+import bank.tcp.shared.BankAnswer.StringAnswer;
 
 /**
  * A command is sent to the server where it's executed.

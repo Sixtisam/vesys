@@ -10,32 +10,38 @@ import java.lang.reflect.InvocationTargetException;
  *
  */
 public class RichDataInputStream extends DataInputStream {
-	public RichDataInputStream(InputStream in) {
-		super(in);
-	}
+    public RichDataInputStream(InputStream in) {
+        super(in);
+    }
 
-	public final String readString() throws IOException {
-		int length = readInt();
-		if(length == -1) {
-		    return null;
-		}
-		
-		char[] chars = new char[length];
-		for (int i = 0; i < length; i++) {
-			chars[i] = readChar();
-		}
+    /**
+     * Write UTF does not handle null
+     * 
+     * @return
+     * @throws IOException
+     */
+    public final String readString() throws IOException {
+        int length = readInt();
+        if (length == -1) {
+            return null;
+        }
 
-		return String.valueOf(chars);
-	}
+        char[] chars = new char[length];
+        for (int i = 0; i < length; i++) {
+            chars[i] = readChar();
+        }
 
-	public final Exception readException() throws IOException {
-		String clazzName = readString();
-		String message = readString();
-		try {
-			return (Exception) Class.forName(clazzName).getDeclaredConstructor(String.class).newInstance(message);
-		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
-				| NoSuchMethodException | SecurityException | ClassNotFoundException e) {
-			throw new IOException("Unknown exception type: " + clazzName);
-		}
-	}
+        return String.valueOf(chars);
+    }
+
+    public final Exception readException() throws IOException {
+        String clazzName = readString();
+        String message = readString();
+        try {
+            return (Exception) Class.forName(clazzName).getDeclaredConstructor(String.class).newInstance(message);
+        } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+                | NoSuchMethodException | SecurityException | ClassNotFoundException e) {
+            throw new IOException("Unknown exception type: " + clazzName);
+        }
+    }
 }

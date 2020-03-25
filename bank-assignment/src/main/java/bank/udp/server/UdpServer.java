@@ -26,7 +26,7 @@ import bank.udp.shared.MessageType;
 import bank.udp.shared.RichDataInputStream;
 import bank.udp.shared.RichDataOutputStream;
 
-public class UdpBankServer {
+public class UdpServer {
     public static final Map<Integer, Map<Integer, byte[]>> REQUEST_RESPONSE_LOG = Collections
             .synchronizedMap(new HashMap<>());
 
@@ -80,6 +80,7 @@ public class UdpBankServer {
             this.packet = packet;
         }
 
+        @SuppressWarnings("resource")
         @Override
         public void run() {
             try (RichDataInputStream in = new RichDataInputStream(new ByteArrayInputStream(packet.getData()))) {

@@ -1,4 +1,5 @@
 bank.local.Driver
 
-bank.sockets.TcpDriver localhost 1234
+bank.tcp.client.TcpDriver localhost 1234
 bank.udp.client.UdpDriver localhost 1234
+bank.http.rest.client.RestDriver localhost 8080

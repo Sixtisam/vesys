@@ -1,34 +1,21 @@
 plugins {
-    id 'java'
-    id 'application'
-    id 'idea'
+	id 'java'
 }
 
 repositories {
-    jcenter()
-    flatDir { dirs 'lib' }
+	jcenter()
 }
-
-mainClassName = 'bank.BankLauncher'
 
 sourceCompatibility = 11
 targetCompatibility = 11
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = 'UTF-8'
 
-def currentOS = org.gradle.internal.os.OperatingSystem.current()
-def platform
-if (currentOS.isWindows()) {
-    platform = 'win'
-} else if (currentOS.isLinux()) {
-    platform = 'linux'
-} else if (currentOS.isMacOsX()) {
-    platform = 'mac'
-}
-
 dependencies {
 	compile 'org.glassfish.jaxb:jaxb-core:2.3.0.1'
 	compile 'com.sun.xml.bind:jaxb-impl:2.3.1'
+
+	compile 'com.thoughtworks.xstream:xstream:1.4.11.1'
 
 	// Jersey mapping for JDK Http Contaier 
 	compile 'org.glassfish.jersey.containers:jersey-container-jdk-http:2.30.1'
@@ -42,16 +29,19 @@ dependencies {
 
 	// JAXB and the new date/time api
 	compile 'io.github.threeten-jaxb:threeten-jaxb-core:1.2'
-	
-    implementation "org.openjfx:javafx-base:11:${platform}"
-    implementation "org.openjfx:javafx-graphics:11:${platform}"
-    implementation "org.openjfx:javafx-controls:11:${platform}"
-    implementation "org.openjfx:javafx-swing:11:${platform}"
-
-    implementation 'junit:junit:4.12'
-    compile ':bank-core:'
 }
 
-idea.module.outputDir file("out/production/classes")
 
+task gradleWrapper(type: Wrapper)
+task zip(type: Zip) {
+	dependsOn gradleWrapper
+	from projectDir
+
+	include 'build.gradle'
+	include 'gradle/**'
+	include 'gradlew'
+	include 'gradlew.bat'
+
+	include 'src/main/java/ch/fhnw/ds/rest/msg/**'
+}
 

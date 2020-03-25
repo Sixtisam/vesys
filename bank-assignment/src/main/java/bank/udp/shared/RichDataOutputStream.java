@@ -9,26 +9,29 @@ import java.io.OutputStream;
  *
  */
 public class RichDataOutputStream extends DataOutputStream {
-	public RichDataOutputStream(OutputStream out) {
-		super(out);
-	}
+    public RichDataOutputStream(OutputStream out) {
+        super(out);
+    }
 
-	public final void writeString(String str) throws IOException {
-	    if(str == null) {
-	        writeInt(-1);
-	        return;
-	    }
-		if (str.length() > Integer.MAX_VALUE) {
-			throw new IllegalArgumentException("string too long");
-		}
-		writeInt(str.length());
-		for (int i = 0; i < str.length(); i++) {
-			writeChar(str.charAt(i));
-		}
-	}
-	
-	public final void writeException(Exception e) throws IOException {
-		writeString(e.getClass().getName());
-		writeString(e.getMessage());
-	}
+    /**
+     * writeUTF does not handle null
+     */
+    public final void writeString(String str) throws IOException {
+        if(str == null) {
+            writeInt(-1);
+            return;
+        }
+        if (str.length() > Integer.MAX_VALUE) {
+            throw new IllegalArgumentException("string too long");
+        }
+        writeInt(str.length());
+        for (int i = 0; i < str.length(); i++) {
+            writeChar(str.charAt(i));
+        }
+    }
+
+    public final void writeException(Exception e) throws IOException {
+        writeString(e.getClass().getName());
+        writeString(e.getMessage());
+    }
 }

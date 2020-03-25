@@ -1,18 +1,207 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="bin/main" path="src/main/java">
+	<classpathentry kind="output" path="bin/default"/>
+	<classpathentry output="bin/main" kind="src" path="src/main/java">
 		<attributes>
 			<attribute name="gradle_scope" value="main"/>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="bin/main" path="src/main/resources">
+	<classpathentry output="bin/main" kind="src" path="src/main/resources">
 		<attributes>
 			<attribute name="gradle_scope" value="main"/>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11/"/>
-	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
-	<classpathentry kind="output" path="bin/default"/>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-core/2.3.0.1/f8e6151bb5d457eeba1fa44bf7b7b6eaf69167a4/jaxb-core-2.3.0.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-core/2.3.0.1/33277bae433ecd0fdebd53812eb084da443575b6/jaxb-core-2.3.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-impl/2.3.1/812be404181e93a2aff3b645fcb9544b4956ed4b/jaxb-impl-2.3.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-impl/2.3.1/a1a12b85ba1435b4189e065f7dafcc3fb9410d38/jaxb-impl-2.3.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-jdk-http/2.30.1/3642b0bdf533abf3467f3466e0a01bc07eef12a4/jersey-container-jdk-http-2.30.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-jdk-http/2.30.1/2ecb131141d15be0383074d63a13fbe190f6e46b/jersey-container-jdk-http-2.30.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.inject/jersey-hk2/2.30.1/8c5ea10793ce5c02feb56dc769676cd563ef8797/jersey-hk2-2.30.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.inject/jersey-hk2/2.30.1/b71108c86eaf6453e1a3b757e1f7b40c977841ed/jersey-hk2-2.30.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.media/jersey-media-json-binding/2.30.1/8bc906937cdc224882568c196bd2a0236d6a3858/jersey-media-json-binding-2.30.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.media/jersey-media-json-binding/2.30.1/2182323ee1cc2fa0bcd52658b22eaa61d9293d47/jersey-media-json-binding-2.30.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/io.github.threeten-jaxb/threeten-jaxb-core/1.2/1ee52fb4546a984026fe744884cb4a616b81a597/threeten-jaxb-core-1.2-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/io.github.threeten-jaxb/threeten-jaxb-core/1.2/d5d5bdc6556701cd5958ace91ca905925520d43/threeten-jaxb-core-1.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="X:/vesys/bank-assignment/lib/bank-core-sources.jar" kind="lib" path="X:/vesys/bank-assignment/lib/bank-core.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/11/a676e1165d829e357c496bc0d6cdd265a466e9ac/javafx-controls-11-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-controls/11/af8d24de44e16a19ae959028eb23a48c145fb682/javafx-controls-11-win.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-swing/11/27547f715d5f790f25b8ba719a425040422b9a3b/javafx-swing-11-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-swing/11/6d34fc92fbea9ab95966380c29b06672a94f4a3e/javafx-swing-11-win.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/11/1f119fa53f40c4dcc64442403f973a47dd6adc13/javafx-graphics-11-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/11/9345c7ea43dbcc73a62eca5332717b4ce617e6c6/javafx-graphics-11-win.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/11/1f119fa53f40c4dcc64442403f973a47dd6adc13/javafx-graphics-11-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-graphics/11/a736dd079047ec0b72b8c4970842a5c5e0c19f2f/javafx-graphics-11.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/11/1442a519fc1ce9ffb79adbb988e137dde2ba1219/javafx-base-11-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/11/ad3a4acfaa28b484d30c40c1f009445cc3f6e68b/javafx-base-11-win.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/11/1442a519fc1ce9ffb79adbb988e137dde2ba1219/javafx-base-11-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.openjfx/javafx-base/11/9fcd3e8e3227ec97bf503f7991fad1f3b14d005/javafx-base-11.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.3.0/431dc11c8e5d8b9f5149be5757ef8e170fc6824a/jaxb-api-2.3.0-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.3.0/99f802e0cb3e953ba3d6e698795c4aeb98d37c48/jaxb-api-2.3.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/txw2/2.3.0.1/21fe36035df5ecb5ebae3e67731440134505a618/txw2-2.3.0.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/txw2/2.3.0.1/4d654f416732fe543deeb93272ead4b59de28fbc/txw2-2.3.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/3.0.5/1b3883eeee5caee2bd70bd9aa3f21a27ba5d774d/istack-commons-runtime-3.0.5-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/3.0.5/8052dc9920dfab5d50b8ca95c95a6ce4296a8f8b/istack-commons-runtime-3.0.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.30.1/dc90dc0dd27df0390b051b925bcfbf253e6dab7a/jersey-server-2.30.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.30.1/1c7122b738fb4afed97b11db7f1f77f8bbd25677/jersey-server-2.30.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-client/2.30.1/22dd21b56e927151abaaa1555b168adf2a46660e/jersey-client-2.30.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-client/2.30.1/a67f9c26703c3f04c9edecee851673b654adcb3c/jersey-client-2.30.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.media/jersey-media-jaxb/2.30.1/a888659756e6c9b24780c5d300777d1431f4016d/jersey-media-jaxb-2.30.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.media/jersey-media-jaxb/2.30.1/e9b726435aef6545971f0bcea17a8daa27528676/jersey-media-jaxb-2.30.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-common/2.30.1/450c8ec00d9641c587f0b0f18347d3e08f37b71c/jersey-common-2.30.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-common/2.30.1/efc1a9d20ed1dcd203d8342d8b5b91728ab463e0/jersey-common-2.30.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.ws.rs/jakarta.ws.rs-api/2.1.6/6c66d1fc6dfd1de469e831d2cab362ce07b2561d/jakarta.ws.rs-api-2.1.6-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.ws.rs/jakarta.ws.rs-api/2.1.6/1dcb770bce80a490dff49729b99c7a60e9ecb122/jakarta.ws.rs-api-2.1.6.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-locator/2.6.1/73883e1a0effc4d1409743b515030a634f7b45c3/hk2-locator-2.6.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-locator/2.6.1/9dedf9d2022e38ec0743ed44c1ac94ad6149acdd/hk2-locator-2.6.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.25.0-GA/f00308c31650161577a0d152898ec606a08945da/javassist-3.25.0-GA-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.javassist/javassist/3.25.0-GA/442dc1f9fd520130bd18da938622f4f9b2e5fba3/javassist-3.25.0-GA.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish/jakarta.json/1.1.5/95d8e2410eca14750018677e13b56b59d88b8e08/jakarta.json-1.1.5-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish/jakarta.json/1.1.5/db0810e21a749c7ff934836c95d69c7c4e67b455/jakarta.json-1.1.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.eclipse/yasson/1.0.3/1f95082efe4a503a39eabe056bef2a8026b192db/yasson-1.0.3-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.eclipse/yasson/1.0.3/2d1cc45f56c76d3e3bb1222d44eca9afaa647e20/yasson-1.0.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.json.bind/jakarta.json.bind-api/1.0.2/4503b923d3ba118602dd53aabfb0177cfbae87ed/jakarta.json.bind-api-1.0.2-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.json.bind/jakarta.json.bind-api/1.0.2/a0f7cf034442d1fd195ca78cf3d6633140d5928f/jakarta.json.bind-api-1.0.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.json/jakarta.json-api/1.1.5/24143bd80a021655a3c156a171697a3461df2cd6/jakarta.json-api-1.1.5-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.json/jakarta.json-api/1.1.5/7d44a70a005bad9a6486758a7ad08ec8dae59c29/jakarta.json-api-1.1.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/2.3.2/8f7b9baa75556d2c03371c7e4b45b484683c7d28/jakarta.xml.bind-api-2.3.2-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/2.3.2/8d49996a4338670764d7ca4b85a1c4ccf7fe665d/jakarta.xml.bind-api-2.3.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/1dc37250fbc78e23a65a67fbbaf71d2e9cbc3c0b/hamcrest-core-1.3-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/1.3.5/1ad35f11d17abb52426bfe15ea7b4c583795012/jakarta.annotation-api-1.3.5-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/1.3.5/59eb84ee0d616332ff44aba065f3888cf002cd2d/jakarta.annotation-api-1.3.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-api/2.6.1/911d7e334b8b230b491bb130af8404fdb7a81059/hk2-api-2.6.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-api/2.6.1/114bd7afb4a1bd9993527f52a08a252b5d2acac5/hk2-api-2.6.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-utils/2.6.1/91a2264ed6d909c44763fc807d22a19da87b84c9/hk2-utils-2.6.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/hk2-utils/2.6.1/396513aa96c1d5a10aa4f75c4dcbf259a698d62d/hk2-utils-2.6.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/jakarta.inject/2.6.1/74132e0252fda12812a851695e488d3a862e09de/jakarta.inject-2.6.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/jakarta.inject/2.6.1/8096ebf722902e75fbd4f532a751e514f02e1eb7/jakarta.inject-2.6.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/osgi-resource-locator/1.0.3/2f01d4501f52f63016fe70f7aea79c19cccb8d44/osgi-resource-locator-1.0.3-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2/osgi-resource-locator/1.0.3/de3b21279df7e755e38275137539be5e2c80dd58/osgi-resource-locator-1.0.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.validation/jakarta.validation-api/2.0.2/ef429a7f3bc2d2d1784a1135668a857a6aaedf31/jakarta.validation-api-2.0.2-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.validation/jakarta.validation-api/2.0.2/5eacc6522521f7eacb081f95cee1e231648461e7/jakarta.validation-api-2.0.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/aopalliance-repackaged/2.6.1/8225e1c5c5615a447227ed9164e709be1e77802d/aopalliance-repackaged-2.6.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.glassfish.hk2.external/aopalliance-repackaged/2.6.1/b2eb0a83bcbb44cc5d25f8b18f23be116313a638/aopalliance-repackaged-2.6.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/1.2.1/6fe481428613e57af220e17b9ebf3475fb27efb8/jakarta.activation-api-1.2.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/1.2.1/562a587face36ec7eff2db7f2fc95425c6602bc1/jakarta.activation-api-1.2.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
 </classpath>
