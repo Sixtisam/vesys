@@ -18,6 +18,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.EntityTag;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
@@ -61,7 +62,7 @@ public class BankResource {
      */
     @GET
     @Path("/accounts")
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response getAccountNumbers() throws IOException {
         UriBuilder builder = resourceUriInfo.getAbsolutePathBuilder().path("/{accountNumber}");
         ResponseBuilder resBuilder = Response.ok();
@@ -76,7 +77,7 @@ public class BankResource {
 
     @POST
     @Path("/accounts")
-    @Consumes({ "application/json" })
+    @Consumes({ MediaType.APPLICATION_JSON })
     public Response createAccount(AccountDTO account) throws IOException {
         String number = bank.createAccount(account.owner);
 
@@ -86,7 +87,7 @@ public class BankResource {
 
     @GET
     @Path("/accounts/{accountNumber}")
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response getAccount(@PathParam("accountNumber") String accountNumber, @Context Request request)
             throws IOException {
         RestServerAccount acc = bank.getAccount(accountNumber);
@@ -106,7 +107,7 @@ public class BankResource {
      */
     @HEAD
     @Path("/accounts/{accountNumber}")
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response accountExists(@PathParam("accountNumber") String accountNumber) throws IOException {
         Account acc = bank.getAccount(accountNumber);
         if (acc == null) {
@@ -120,7 +121,7 @@ public class BankResource {
 
     @PUT
     @Path("/accounts/{accountNumber}")
-    @Consumes({ "application/json" })
+    @Consumes({ MediaType.APPLICATION_JSON })
     public Response updateBalance(@PathParam("accountNumber") String accountNumber, @Context Request request,
             BalanceDTO balanceDto)
             throws IOException, IllegalArgumentException, InactiveException {
@@ -139,7 +140,7 @@ public class BankResource {
 
     @DELETE
     @Path("/accounts/{accountNumber}")
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response closeAccount(@PathParam("accountNumber") String accountNumber) throws IOException {
         Account acc = bank.getAccount(accountNumber);
         if (acc == null) {
@@ -154,7 +155,7 @@ public class BankResource {
 
     @POST
     @Path("/transfers")
-    @Consumes("application/json")
+    @Consumes(MediaType.APPLICATION_JSON)
     public void transferTo(TransferDTO transfer) throws IOException, InactiveException, OverdrawException {
         Account from = bank.getAccount(transfer.getFrom());
         Account to = bank.getAccount(transfer.getTo());

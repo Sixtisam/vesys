@@ -180,7 +180,7 @@ public class RestDriver implements BankDriver {
         private Response loadAccountResponse() throws IOException {
             Response response = accountsTarget.path(this.number)
                     .request(MediaType.APPLICATION_JSON_TYPE)
-                    .header("ETag", etag)
+                    .header("If-None-Match", etag)
                     .buildGet()
                     .invoke();
             try {
@@ -244,7 +244,7 @@ public class RestDriver implements BankDriver {
                     BalanceDTO balanceDto = new BalanceDTO(operator.applyAsDouble(this.balance));
                     Response updateResp = accountsTarget.path(this.number)
                             .request()
-                            .header("ETag", this.etag)
+                            .header("If-Match", this.etag)
                             .buildPut(Entity.json(balanceDto))
                             .invoke();
 
