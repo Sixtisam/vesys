@@ -10,7 +10,7 @@ import bank.Account;
 import bank.InactiveException;
 import bank.OverdrawException;
 
-public class ServerBank implements bank.Bank {
+public class UdpServerBank implements bank.Bank {
 
 	private final ConcurrentHashMap<String, ServerAccount> accounts = new ConcurrentHashMap<>();
 

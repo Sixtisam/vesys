@@ -1,0 +1,47 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.5.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+repositories {
+	mavenCentral()
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-jersey'
+	
+	implementation 'io.swagger.core.v3:swagger-annotations:2.1.1'
+	implementation 'io.swagger.core.v3:swagger-core:2.1.1'
+	implementation 'io.swagger.core.v3:swagger-jaxrs2:2.1.1'
+	
+//    implementation ('io.swagger.core.v3:swagger-jaxrs2:2.1.1') {
+//        exclude group: 'io.github.classgraph', module: 'classgraph'
+//    }	
+	
+	// XML Mapping
+	implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.2' 
+
+	// Swagger UI
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.3.0'
+}
+
+
+task gradleWrapper(type: Wrapper)
+task zip(type: Zip) {
+	dependsOn gradleWrapper
+	from projectDir
+
+	include 'build.gradle'
+	include 'gradle/**'
+	include 'gradlew'
+	include 'gradlew.bat'
+
+	include 'src/main/java/ch/fhnw/ds/rest/**'
+}
+

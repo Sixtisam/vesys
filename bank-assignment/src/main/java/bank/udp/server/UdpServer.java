@@ -34,12 +34,12 @@ public class UdpServer {
 
     public static final AtomicInteger CLIENT_NR_SEQUENCE = new AtomicInteger(0);
 
-    public static ServerBank BANK;
+    public static UdpServerBank BANK;
 
     public static void main(String[] args) {
         System.out.println("Initializing bank server...");
         ExecutorService svc = Executors.newCachedThreadPool();
-        BANK = new ServerBank();
+        BANK = new UdpServerBank();
         initializeRequestHandlerMap();
         try (DatagramSocket socket = new DatagramSocket(1234)) {
             while (true) {

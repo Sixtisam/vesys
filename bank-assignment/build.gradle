@@ -47,6 +47,10 @@ dependencies {
     implementation "org.openjfx:javafx-graphics:11:${platform}"
     implementation "org.openjfx:javafx-controls:11:${platform}"
     implementation "org.openjfx:javafx-swing:11:${platform}"
+    
+    // WebSocket implementation
+	implementation 'org.glassfish.tyrus:tyrus-client:1.16'
+	implementation 'org.glassfish.tyrus:tyrus-container-grizzly-server:1.16'
 
     implementation 'junit:junit:4.12'
     compile ':bank-core:'

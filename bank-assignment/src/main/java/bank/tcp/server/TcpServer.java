@@ -8,15 +8,16 @@ import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import bank.local.Bank;
 import bank.tcp.shared.BankAnswer;
-import bank.tcp.shared.BankCommand;
 import bank.tcp.shared.BankAnswer.BankExceptionAnswer;
+import bank.tcp.shared.BankCommand;
 
 public class TcpServer {
     public static void main(String[] args) {
         System.out.println("Initializing bank server...");
         ExecutorService svc = Executors.newCachedThreadPool();
-        ServerBank bank = new ServerBank();
+        Bank bank = new Bank();
         try (ServerSocket server = new ServerSocket(1234)) {
             while (true) {
                 System.out.println("Waiting for client...");
@@ -33,9 +34,9 @@ public class TcpServer {
      */
     public static class ClientHandler implements Runnable {
         private final Socket socket;
-        private final ServerBank bank;
+        private final Bank bank;
 
-        public ClientHandler(Socket socket, ServerBank bank) {
+        public ClientHandler(Socket socket, Bank bank) {
             this.socket = socket;
             this.bank = bank;
         }

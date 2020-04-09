@@ -7,7 +7,7 @@ import java.util.HashSet;
 import bank.Account;
 import bank.InactiveException;
 import bank.OverdrawException;
-import bank.tcp.server.ServerBank;
+import bank.local.Bank;
 import bank.tcp.shared.BankAnswer.BooleanAnswer;
 import bank.tcp.shared.BankAnswer.DoubleAnswer;
 import bank.tcp.shared.BankAnswer.HashSetAnswer;
@@ -24,13 +24,13 @@ public interface BankCommand<T extends BankAnswer<? extends Serializable>> exten
     /*
      * executes this command on the server
      */
-    public T execute(ServerBank bank) throws Exception;
+    public T execute(Bank bank) throws Exception;
 
     public static class BankGetAccountNumbersCommand implements BankCommand<BankAnswer<HashSet<String>>> {
         private static final long serialVersionUID = 1L;
 
         @Override
-        public BankAnswer<HashSet<String>> execute(ServerBank bank) throws IOException {
+        public BankAnswer<HashSet<String>> execute(Bank bank) throws IOException {
             return new HashSetAnswer<String>(new HashSet<>(bank.getAccountNumbers()));
         }
     }
@@ -44,7 +44,7 @@ public interface BankCommand<T extends BankAnswer<? extends Serializable>> exten
         }
 
         @Override
-        public BooleanAnswer execute(ServerBank bank) throws Exception {
+        public BooleanAnswer execute(Bank bank) throws Exception {
             return new BooleanAnswer(bank.closeAccount(number));
         }
     }
@@ -58,7 +58,7 @@ public interface BankCommand<T extends BankAnswer<? extends Serializable>> exten
         }
 
         @Override
-        public StringAnswer execute(ServerBank bank) throws IOException {
+        public StringAnswer execute(Bank bank) throws IOException {
             return new StringAnswer(bank.createAccount(owner));
         }
     }
@@ -77,7 +77,7 @@ public interface BankCommand<T extends BankAnswer<? extends Serializable>> exten
         }
 
         @Override
-        public OkAnswer execute(ServerBank bank) throws InactiveException, OverdrawException, IOException {
+        public OkAnswer execute(Bank bank) throws InactiveException, OverdrawException, IOException {
             Account fromAcc = bank.getAccount(from);
             Account toAcc = bank.getAccount(to);
             bank.transfer(fromAcc, toAcc, amount);
@@ -99,11 +99,11 @@ public interface BankCommand<T extends BankAnswer<? extends Serializable>> exten
         }
 
         @Override
-        public final T execute(ServerBank bank) throws Exception {
+        public final T execute(Bank bank) throws Exception {
             return execute(bank, bank.getAccount(number));
         }
 
-        protected abstract T execute(ServerBank bank, Account account) throws Exception;
+        protected abstract T execute(Bank bank, Account account) throws Exception;
     }
 
     public static class BankAccountGetBalanceCommand extends BankAccountCommand<DoubleAnswer> {
@@ -114,7 +114,7 @@ public interface BankCommand<T extends BankAnswer<? extends Serializable>> exten
         }
 
         @Override
-        public DoubleAnswer execute(ServerBank bank, Account account) throws Exception {
+        public DoubleAnswer execute(Bank bank, Account account) throws Exception {
             return new DoubleAnswer(account.getBalance());
         }
     }
@@ -127,7 +127,7 @@ public interface BankCommand<T extends BankAnswer<? extends Serializable>> exten
         }
 
         @Override
-        protected BankAnswer<String> execute(ServerBank bank, Account account) throws Exception {
+        protected BankAnswer<String> execute(Bank bank, Account account) throws Exception {
             return new StringAnswer(account.getOwner());
         }
     }
@@ -140,7 +140,7 @@ public interface BankCommand<T extends BankAnswer<? extends Serializable>> exten
         }
 
         @Override
-        protected BooleanAnswer execute(ServerBank bank, Account account) throws Exception {
+        protected BooleanAnswer execute(Bank bank, Account account) throws Exception {
             return new BooleanAnswer(account != null && account.isActive());
         }
     }
@@ -153,7 +153,7 @@ public interface BankCommand<T extends BankAnswer<? extends Serializable>> exten
         }
 
         @Override
-        public BooleanAnswer execute(ServerBank bank, Account account) throws Exception {
+        public BooleanAnswer execute(Bank bank, Account account) throws Exception {
             return new BooleanAnswer(account != null);
         }
     }
@@ -175,7 +175,7 @@ public interface BankCommand<T extends BankAnswer<? extends Serializable>> exten
         }
 
         @Override
-        protected OkAnswer execute(ServerBank bank, Account account) throws Exception {
+        protected OkAnswer execute(Bank bank, Account account) throws Exception {
             if (type == Type.DEPOSIT) {
                 account.deposit(amount);
             } else if (type == Type.WITHDRAW) {
