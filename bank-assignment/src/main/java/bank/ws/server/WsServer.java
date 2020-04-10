@@ -27,6 +27,10 @@ import bank.local.Bank;
 public class WsServer {
 
     private static final Bank bank;
+
+    /**
+     * Sessions are stored separately instead of using Session.getOpenSession() 
+     */
     private static final Set<Session> sessions = ConcurrentHashMap.newKeySet();
 
     public static void main(String[] args) throws DeploymentException, IOException {
@@ -43,11 +47,14 @@ public class WsServer {
 
     public static void accountChanged(String id) throws IOException {
         sessions.forEach(session -> {
-            try {
-                session.getBasicRemote().sendObject(new AccountChangedAnswer(id));
-            } catch (Exception e) {
-                System.err.println("Failed to notify client " + session.getId() + " for changed account");
-                e.printStackTrace();
+            if (session.isOpen()) {
+                try {
+                    // notify all sessions about the changed account
+                    session.getBasicRemote().sendObject(new AccountChangedAnswer(id));
+                } catch (Exception e) {
+                    System.err.println("Failed to notify client " + session.getId() + " for changed account");
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -60,6 +67,8 @@ public class WsServer {
 
     @OnMessage
     public Object onMessage(Object obj) {
+        // Object param is required because it must corresponds to the generic type of
+        // ObjectInputStreamDecoder
         BankCommand<?> command = (BankCommand<?>) obj;
         try {
             return command.execute(bank);

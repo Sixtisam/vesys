@@ -23,6 +23,14 @@ import bank.commands.BankCommand.BankGetAccountNumbersCommand;
 import bank.commands.BankCommand.BankTransferCommand;
 import bank.commands.BankCommand.BankAccountModifyBalanceCommand.Type;
 
+/**
+ * A bank that can be used as a proxy. Each bank method will result in a call of
+ * {@link #remoteCall(BankCommand, Class)}.
+ * 
+ * Subclasses should override {@link #remoteCall(BankCommand, Class)} to use a
+ * custom transport protocol.
+ *
+ */
 public abstract class CommandBank implements Bank {
 
     protected abstract <T extends BankCommand<? extends BankAnswer<? extends Serializable>>, R extends BankAnswer<? extends Serializable>> R remoteCall(

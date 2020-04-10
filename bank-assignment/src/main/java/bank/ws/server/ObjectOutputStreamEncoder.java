@@ -12,7 +12,6 @@ public class ObjectOutputStreamEncoder implements Encoder.Binary<Object> {
 
     @Override
     public void init(EndpointConfig config) {
-
     }
 
     @Override

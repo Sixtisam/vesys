@@ -38,7 +38,6 @@ public class RestServer {
 
     /**
      * Logs the requests
-     *
      */
     @Provider
     public static class ResponseLoggingFilter implements ContainerResponseFilter {

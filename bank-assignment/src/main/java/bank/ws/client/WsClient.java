@@ -21,7 +21,13 @@ import bank.ws.server.ObjectOutputStreamEncoder;
         decoders = { ObjectInputStreamDecoder.class },
         encoders = { ObjectOutputStreamEncoder.class })
 public class WsClient {
+    /**
+     * contains all received answers that are not yet processed
+     */
     private final ArrayBlockingQueue<BankAnswer<?>> answerQueue;
+    /**
+     * the handle informed by incoming {@link AccountChangedAnswer}'s
+     */
     private final UpdateHandler updateHandler;
 
     public WsClient(ArrayBlockingQueue<BankAnswer<?>> answerQueue, UpdateHandler updateHandler) {
@@ -38,6 +44,8 @@ public class WsClient {
     @OnMessage
     public void onMessage(Object obj) throws IOException, InterruptedException {
         BankAnswer<?> answer = (BankAnswer<?>) obj;
+        
+        // branch between AccountChanged notification and other answers
         if (answer instanceof AccountChangedAnswer) {
             updateHandler.accountChanged(((AccountChangedAnswer) answer).getData());
         } else {

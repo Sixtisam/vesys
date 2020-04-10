@@ -22,6 +22,10 @@ public class WsDriver implements BankDriver2, UpdateHandler {
     private Session session;
     private Bank bank;
     private final List<UpdateHandler> updateHandlers = new ArrayList<>();
+
+    /**
+     * holds all answers retrieved from server but not yet processed.
+     */
     private final ArrayBlockingQueue<BankAnswer<?>> answerQueue = new ArrayBlockingQueue<>(10);
 
     @Override
@@ -41,17 +45,9 @@ public class WsDriver implements BankDriver2, UpdateHandler {
         updateHandlers.add(handler);
     }
 
-    protected void notify(String number) {
-        updateHandlers.forEach(uH -> {
-            try {
-                uH.accountChanged(number);
-            } catch (IOException e) {
-                System.err.println("UpdateHandler throwed exception " + e.getMessage());
-                e.printStackTrace();
-            }
-        });
-    }
-
+    /**
+     * informs all listeners about the changed account
+     */
     public void accountChanged(String number) {
         updateHandlers.forEach(uH -> {
             try {
@@ -77,9 +73,13 @@ public class WsDriver implements BankDriver2, UpdateHandler {
         @Override
         protected <T extends BankCommand<? extends BankAnswer<? extends Serializable>>, R extends BankAnswer<? extends Serializable>> R remoteCall(
                 T cmd, Class<R> resultType) throws IOException, Exception {
+            // send the command.
             session.getBasicRemote().sendObject(cmd);
+            
+            // waits until next answer is received.
             BankAnswer<?> answer = answerQueue.take();
 
+            // decide if exception or valid result
             if (answer instanceof BankExceptionAnswer) {
                 throw ((BankExceptionAnswer) answer).getData();
             } else if (answer instanceof BankAnswer) {
