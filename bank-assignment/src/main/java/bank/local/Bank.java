@@ -100,7 +100,7 @@ public class Bank implements bank.Bank {
      * Account which is thread-safe
      *
      */
-    class Account implements bank.Account {
+    public class Account implements bank.Account {
         private final String number;
         private final String owner;
         private double balance;
@@ -166,6 +166,52 @@ public class Bank implements bank.Bank {
                 return true;
             }
             return false;
+        }
+
+        @Override
+        public int hashCode() {
+            final int prime = 31;
+            int result = 1;
+            result = prime * result + getEnclosingInstance().hashCode();
+            result = prime * result + (active ? 1231 : 1237);
+            long temp;
+            temp = Double.doubleToLongBits(balance);
+            result = prime * result + (int) (temp ^ (temp >>> 32));
+            result = prime * result + ((number == null) ? 0 : number.hashCode());
+            result = prime * result + ((owner == null) ? 0 : owner.hashCode());
+            return result;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj)
+                return true;
+            if (obj == null)
+                return false;
+            if (getClass() != obj.getClass())
+                return false;
+            Account other = (Account) obj;
+            if (!getEnclosingInstance().equals(other.getEnclosingInstance()))
+                return false;
+            if (active != other.active)
+                return false;
+            if (Double.doubleToLongBits(balance) != Double.doubleToLongBits(other.balance))
+                return false;
+            if (number == null) {
+                if (other.number != null)
+                    return false;
+            } else if (!number.equals(other.number))
+                return false;
+            if (owner == null) {
+                if (other.owner != null)
+                    return false;
+            } else if (!owner.equals(other.owner))
+                return false;
+            return true;
+        }
+
+        private Bank getEnclosingInstance() {
+            return Bank.this;
         }
     }
 }

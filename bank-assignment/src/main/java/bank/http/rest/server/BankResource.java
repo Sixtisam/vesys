@@ -32,25 +32,19 @@ import bank.OverdrawException;
 import bank.http.rest.AccountDTO;
 import bank.http.rest.BalanceDTO;
 import bank.http.rest.TransferDTO;
-import bank.http.rest.server.RestServerBank.RestServerAccount;
+import bank.local.Bank;
 
 @Singleton
 @Path("/bank")
 public class BankResource {
 
-    private final RestServerBank bank = new RestServerBank();
+    private final Bank bank = new Bank();
 
     @Context
     UriInfo resourceUriInfo;
 
-    {
-        String nr;
-        try {
-            nr = bank.createAccount("Samuel");
-            bank.getAccount(nr).setBalance(100);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    protected String buildETag(Bank.Account acc) {
+        return "\"" + acc.hashCode() + "\"";
     }
 
     /**
@@ -90,15 +84,15 @@ public class BankResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAccount(@PathParam("accountNumber") String accountNumber, @Context Request request)
             throws IOException {
-        RestServerAccount acc = bank.getAccount(accountNumber);
+        Bank.Account acc = bank.getAccount(accountNumber);
         if (acc == null) {
             throw new NotFoundException();
         }
-        ResponseBuilder builder = request.evaluatePreconditions(new EntityTag(acc.getETag()));
+        ResponseBuilder builder = request.evaluatePreconditions(new EntityTag(buildETag(acc)));
         if (builder != null) {
             return builder.build();
         } else {
-            return Response.ok(acc).tag(acc.getETag()).build();
+            return Response.ok(acc).tag(buildETag(acc)).build();
         }
     }
 
@@ -124,14 +118,19 @@ public class BankResource {
     @Consumes({ MediaType.APPLICATION_JSON })
     public Response updateBalance(@PathParam("accountNumber") String accountNumber, @Context Request request,
             BalanceDTO balanceDto)
-            throws IOException, IllegalArgumentException, InactiveException {
-        RestServerAccount serverAcc = bank.getAccount(accountNumber);
+            throws IOException, IllegalArgumentException, InactiveException, OverdrawException {
+        Bank.Account serverAcc = bank.getAccount(accountNumber);
         if (serverAcc == null) {
             throw new NotFoundException();
         }
-        ResponseBuilder builder = request.evaluatePreconditions(new EntityTag(serverAcc.getETag()));
+        ResponseBuilder builder = request.evaluatePreconditions(new EntityTag(buildETag(serverAcc)));
         if (builder == null) {
-            serverAcc.setBalance(balanceDto.getBalance());
+            double diff = balanceDto.getBalance() - serverAcc.getBalance();
+            if (diff < 0) {
+                serverAcc.withdraw(-diff);
+            } else {
+                serverAcc.deposit(diff);
+            }
             return Response.ok().build();
         } else {
             return builder.build();

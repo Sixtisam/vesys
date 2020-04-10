@@ -8,10 +8,10 @@ import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import bank.commands.BankAnswer;
+import bank.commands.BankCommand;
+import bank.commands.BankAnswer.BankExceptionAnswer;
 import bank.local.Bank;
-import bank.tcp.shared.BankAnswer;
-import bank.tcp.shared.BankAnswer.BankExceptionAnswer;
-import bank.tcp.shared.BankCommand;
 
 public class TcpServer {
     public static void main(String[] args) {

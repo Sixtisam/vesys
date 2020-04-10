@@ -12,8 +12,8 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 
 import bank.BankDriver2.UpdateHandler;
-import bank.tcp.shared.BankAnswer;
-import bank.ws.server.AccountChangedAnswer;
+import bank.commands.AccountChangedAnswer;
+import bank.commands.BankAnswer;
 import bank.ws.server.ObjectInputStreamDecoder;
 import bank.ws.server.ObjectOutputStreamEncoder;
 
@@ -36,7 +36,8 @@ public class WsClient {
     }
 
     @OnMessage
-    public void onMessage(BankAnswer<?> answer) throws IOException, InterruptedException {
+    public void onMessage(Object obj) throws IOException, InterruptedException {
+        BankAnswer<?> answer = (BankAnswer<?>) obj;
         if (answer instanceof AccountChangedAnswer) {
             updateHandler.accountChanged(((AccountChangedAnswer) answer).getData());
         } else {
@@ -51,6 +52,7 @@ public class WsClient {
 
     @OnError
     public void onError(Throwable exception, Session session) {
-        System.out.println("an error occured on connection " + session.getId() + ":" + exception);
+        System.out.println("an error occured " + session.getId() + ":" + exception);
+        exception.printStackTrace();
     }
 }

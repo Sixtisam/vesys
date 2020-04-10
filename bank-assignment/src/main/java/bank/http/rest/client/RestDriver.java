@@ -242,6 +242,9 @@ public class RestDriver implements BankDriver {
                 while (true) {
                     loadAndCacheAccount();
                     BalanceDTO balanceDto = new BalanceDTO(operator.applyAsDouble(this.balance));
+                    if(balanceDto.getBalance() < 0.0) {
+                        throw new OverdrawException();
+                    }
                     Response updateResp = accountsTarget.path(this.number)
                             .request()
                             .header("If-Match", this.etag)
@@ -253,7 +256,7 @@ public class RestDriver implements BankDriver {
                         return;
                     }
                 }
-            } catch (InactiveException | IllegalArgumentException e) {
+            } catch (InactiveException | OverdrawException | IllegalArgumentException e) {
                 throw e;
             } catch (Exception e) {
                 throw new IOException(e);

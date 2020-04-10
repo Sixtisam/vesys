@@ -8,9 +8,7 @@ import javax.websocket.DecodeException;
 import javax.websocket.Decoder;
 import javax.websocket.EndpointConfig;
 
-import bank.tcp.shared.BankCommand;
-
-public class ObjectInputStreamDecoder implements Decoder.Binary<BankCommand<?>> {
+public class ObjectInputStreamDecoder implements Decoder.Binary<Object> {
 
     @Override
     public void init(EndpointConfig config) {
@@ -21,10 +19,10 @@ public class ObjectInputStreamDecoder implements Decoder.Binary<BankCommand<?>> 
     }
 
     @Override
-    public BankCommand<?> decode(ByteBuffer bytes) throws DecodeException {
+    public Object decode(ByteBuffer bytes) throws DecodeException {
         try (ByteArrayInputStream bbis = new ByteArrayInputStream(bytes.array());
                 ObjectInputStream ois = new ObjectInputStream(bbis)) {
-            return (BankCommand<?>) ois.readObject();
+            return ois.readObject();
         } catch (Exception e) {
             throw new DecodeException(bytes, "failed to decode", e);
         }

@@ -15,34 +15,33 @@ import javax.websocket.server.ServerEndpoint;
 
 import org.glassfish.tyrus.server.Server;
 
-import bank.BankDriver2.UpdateHandler;
+import bank.commands.AccountChangedAnswer;
+import bank.commands.BankCommand;
+import bank.commands.BankAnswer.BankExceptionAnswer;
 import bank.local.Bank;
-import bank.tcp.shared.BankAnswer.BankExceptionAnswer;
-import bank.tcp.shared.BankCommand;
 
 @ServerEndpoint(
         value = "/bank",
         encoders = { ObjectOutputStreamEncoder.class },
         decoders = { ObjectInputStreamDecoder.class })
-public class WsServer implements UpdateHandler {
+public class WsServer {
+
+    private static final Bank bank;
+    private static final Set<Session> sessions = ConcurrentHashMap.newKeySet();
 
     public static void main(String[] args) throws DeploymentException, IOException {
-        Server server = new Server("localhost", 2222, "", null, WsServer.class);
+        Server server = new Server("localhost", 2222, "/ws", null, WsServer.class);
         server.start();
         System.out.println("Server started, press a key to stop the server");
         System.in.read();
     }
 
-    private final Bank bank;
-    private final Set<Session> sessions = ConcurrentHashMap.newKeySet();
-
-    public WsServer() {
+    static {
         bank = new Bank();
-        bank.registerUpdateHandler(this);
+        bank.registerUpdateHandler(WsServer::accountChanged);
     }
 
-    @Override
-    public void accountChanged(String id) throws IOException {
+    public static void accountChanged(String id) throws IOException {
         sessions.forEach(session -> {
             try {
                 session.getBasicRemote().sendObject(new AccountChangedAnswer(id));
@@ -60,7 +59,8 @@ public class WsServer implements UpdateHandler {
     }
 
     @OnMessage
-    public Object onMessage(BankCommand<?> command) {
+    public Object onMessage(Object obj) {
+        BankCommand<?> command = (BankCommand<?>) obj;
         try {
             return command.execute(bank);
         } catch (Exception e) {
