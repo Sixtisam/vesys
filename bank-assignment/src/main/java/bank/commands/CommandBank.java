@@ -41,7 +41,7 @@ public abstract class CommandBank implements Bank {
         try {
             boolean isActive = remoteCall(new BankAccountExistsCommand(number), BooleanAnswer.class).primitive();
             if (isActive) {
-                return new RemoteAccount(number);
+                return new RemoteAccount(number, remoteCall(new BankAccountGetOwnerCommand(number), StringAnswer.class).getData());
             } else {
                 return null;
             }
@@ -92,14 +92,21 @@ public abstract class CommandBank implements Bank {
 
     private class RemoteAccount implements bank.Account {
         private final String number;
+        private final String owner;
 
-        private RemoteAccount(String number) {
+        private RemoteAccount(String number, String owner) {
             this.number = number;
+            this.owner = owner;
         }
 
         @Override
         public String getNumber() {
             return number;
+        }
+        
+        @Override
+        public String getOwner() {
+            return owner;
         }
 
         @Override
@@ -111,14 +118,6 @@ public abstract class CommandBank implements Bank {
             }
         }
 
-        @Override
-        public String getOwner() throws IOException {
-            try {
-                return remoteCall(new BankAccountGetOwnerCommand(number), StringAnswer.class).getData();
-            } catch (Exception e) {
-                throw new IOException(e);
-            }
-        }
 
         @Override
         public boolean isActive() throws IOException {
