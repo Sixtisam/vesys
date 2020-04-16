@@ -45,7 +45,7 @@ public class TcpDriver implements bank.BankDriver {
     public class Bank extends CommandBank {
 
         @Override
-        protected <T extends BankCommand<? extends BankAnswer<? extends Serializable>>, R extends BankAnswer<? extends Serializable>> R remoteCall(
+        protected <T extends BankCommand<? extends R>, R extends BankAnswer<? extends Serializable>> R remoteCall(
                 T cmd, Class<R> resultType) throws IOException, Exception {
             try {
                 out.writeObject(cmd);

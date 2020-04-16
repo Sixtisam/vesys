@@ -72,12 +72,8 @@ public class WsDriver implements BankDriver2, UpdateHandler {
     public class Bank extends CommandBank {
 
         @Override
-        protected <T extends BankCommand<? extends BankAnswer<? extends Serializable>>, R extends BankAnswer<? extends Serializable>> R remoteCall(
+        protected <T extends BankCommand<? extends R>, R extends BankAnswer<? extends Serializable>> R remoteCall(
                 T cmd, Class<R> resultType) throws IOException, Exception {
-    	// XXX sehr schön. Eigentlich gilt ja, dass das BankAnswer<? extends Serializable> bei der Definition von T gleich sein sollte wie das
-    	//                 BankAnswer<? extends Serializable> bei der Defintiion von R. Könnte man das nicht noch stärker ausdrücken (wenn man 
-        //                 folgende Signatur verwendet)? 
-        // protected <T extends BankCommand<? extends R>, R extends BankAnswer<? extends Serializable>> R remoteCall(T cmd, Class<R> resultType)
             // send the command.
             session.getBasicRemote().sendObject(cmd);
             

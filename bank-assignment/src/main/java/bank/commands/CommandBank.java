@@ -33,7 +33,7 @@ import bank.commands.BankCommand.BankAccountModifyBalanceCommand.Type;
  */
 public abstract class CommandBank implements Bank {
 
-    protected abstract <T extends BankCommand<? extends BankAnswer<? extends Serializable>>, R extends BankAnswer<? extends Serializable>> R remoteCall(
+    protected abstract <T extends BankCommand<? extends R>, R extends BankAnswer<? extends Serializable>> R remoteCall(
             T command, Class<R> answer) throws Exception;
 
     @Override

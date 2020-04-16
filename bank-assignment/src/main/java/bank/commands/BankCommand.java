@@ -26,11 +26,11 @@ public interface BankCommand<T extends BankAnswer<? extends Serializable>> exten
      */
     public T execute(Bank bank) throws Exception;
 
-    public static class BankGetAccountNumbersCommand implements BankCommand<BankAnswer<HashSet<String>>> {
+    public static class BankGetAccountNumbersCommand implements BankCommand<HashSetAnswer<String>> {
         private static final long serialVersionUID = 1L;
 
         @Override
-        public BankAnswer<HashSet<String>> execute(Bank bank) throws IOException {
+        public HashSetAnswer<String> execute(Bank bank) throws IOException {
             return new HashSetAnswer<String>(new HashSet<>(bank.getAccountNumbers()));
         }
     }
@@ -119,7 +119,7 @@ public interface BankCommand<T extends BankAnswer<? extends Serializable>> exten
         }
     }
 
-    public static class BankAccountGetOwnerCommand extends BankAccountCommand<BankAnswer<String>> {
+    public static class BankAccountGetOwnerCommand extends BankAccountCommand<StringAnswer> {
         private static final long serialVersionUID = 1L;
 
         public BankAccountGetOwnerCommand(String number) {
@@ -127,7 +127,7 @@ public interface BankCommand<T extends BankAnswer<? extends Serializable>> exten
         }
 
         @Override
-        protected BankAnswer<String> execute(Bank bank, Account account) throws Exception {
+        protected StringAnswer execute(Bank bank, Account account) throws Exception {
             return new StringAnswer(account.getOwner());
         }
     }
