@@ -44,7 +44,7 @@ public class BankResource {
     UriInfo resourceUriInfo;
 
     protected String buildETag(Bank.Account acc) {
-        return "\"" + acc.hashCode() + "\"";
+        return "" + acc.hashCode() + "\"";	// XXX could be changed to  return "" + acc.hashCode();
     }
 
     /**

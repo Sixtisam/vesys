@@ -202,6 +202,7 @@ public class RestDriver implements BankDriver {
             if (resp.getStatusInfo().equals(Status.NOT_MODIFIED)) {
                 return;
             }
+            // XXX hier sollte auch noch der Fall 404 abgefangen werden, denn in diesem Fall ist die Entity null und es würde eine NPE geworfen (ok, man kann auch sagen NPE ist das richtige hier....)
             AccountDTO acc = resp.readEntity(AccountDTO.class);
             this.etag = resp.getEntityTag().toString();
             this.active = acc.active;
