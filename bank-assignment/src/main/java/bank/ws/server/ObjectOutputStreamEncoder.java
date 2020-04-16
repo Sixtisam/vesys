@@ -22,7 +22,8 @@ public class ObjectOutputStreamEncoder implements Encoder.Binary<Object> {
     public ByteBuffer encode(Object object) throws EncodeException {
         try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 ObjectOutputStream oos = new ObjectOutputStream(baos)) {
-            oos.writeObject(object);
+            oos.writeObject(object);	// XXX ich frage mich ob man hier nicht noch ein flush/close hätte machen müssen,
+            							//     denn das close aus dem try-with kommt erst nach dem Aufruf von ByteBuffer.wrap.
             return ByteBuffer.wrap(baos.toByteArray());
         } catch (Exception e) {
             throw new EncodeException(object, "failed to encode", e);

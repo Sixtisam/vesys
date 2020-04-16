@@ -9,6 +9,9 @@ import javax.websocket.Decoder;
 import javax.websocket.EndpointConfig;
 
 public class ObjectInputStreamDecoder implements Decoder.Binary<Object> {
+	// XXX als Variante gäbe es auch das Decoder.BinaryStream Interface.
+	// XXX Ich wollte eben noch vorschlagen, dass Sie auch Decoder.Binary<BankCommand> implementieren könnten, aber dann können Sie diesen
+	//     Decoder nur auf Serverseite verwenden, den auf Klientenseite erwarten Sie ja BankAnswer Objekte.
 
     @Override
     public void init(EndpointConfig config) {

@@ -14,7 +14,7 @@ import bank.OverdrawException;
 
 public class Bank implements bank.Bank {
     private final ConcurrentHashMap<String, Account> accounts = new ConcurrentHashMap<>();
-    private final List<UpdateHandler> updateHandlers = new ArrayList<>();
+    private final List<UpdateHandler> updateHandlers = new ArrayList<>();	// XXX hier sollte vielleicht auch etwas threadsicheres verwendet werden, denn die registerUpdateHandler könnten ja auch aus mehreren Threads erfolgen (nicht in der WebSocket lösung)
 
     public void registerUpdateHandler(UpdateHandler handler) {
         updateHandlers.add(handler);
@@ -55,7 +55,7 @@ public class Bank implements bank.Bank {
     public boolean closeAccount(String number) {
         Account acc = accounts.get(number);
         if (acc != null) {
-            notify(number);
+            notify(number);	// XXX Notifikation eigentlich nur wenn das folgende acc.close() true zurückgibt.
             return acc.close();
         } else {
             return false;
@@ -168,6 +168,7 @@ public class Bank implements bank.Bank {
             return false;
         }
 
+        // XXX Muss equals und hashCode überhaupt überschrieben werde? Ich meinte nein.
         @Override
         public int hashCode() {
             final int prime = 31;

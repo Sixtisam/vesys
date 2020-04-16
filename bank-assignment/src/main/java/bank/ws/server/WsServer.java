@@ -69,6 +69,7 @@ public class WsServer {
     public Object onMessage(Object obj) {
         // Object param is required because it must corresponds to the generic type of
         // ObjectInputStreamDecoder
+    	// XXX Genau. Variante wäre unterschiedliche Encodeer/Decoder auf Client und Serverseite, dann könnte man BankCoomand als Parametertp verwenden.
         BankCommand<?> command = (BankCommand<?>) obj;
         try {
             return command.execute(bank);
