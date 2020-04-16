@@ -73,6 +73,8 @@ public class BankResource {
     @Path("/accounts")
     @Consumes({ MediaType.APPLICATION_JSON })
     public Response createAccount(AccountDTO account) throws IOException {
+    	// XXX hier haben sie sich sicher überlegt, ob man ein separates DTO definieren soll mit dem man nur den Namen übergeben kann.
+    	//     Jetzt werden einfach die restlichen Felder, falls sie vorhanden sind, ignoriert. Variante wäre ein weiteres DTO analog zum BalanceDTO.
         String number = bank.createAccount(account.owner);
 
         URI uri = resourceUriInfo.getAbsolutePathBuilder().path("/{accountNumber}").build(number);
@@ -98,6 +100,8 @@ public class BankResource {
 
     /**
      * not used but still implemented
+     * // XXX wenn Sie es nicht impelemntieren wäre es trotzdem verfügbar, d.h. es wird ann einfach der Header des GET Requests zurückgeschickt.
+     * //     In Ihrem Fall sind diese beiden Header jedoch nicht identisch, d.h. das GET liefert die Information GONE nicht aus.
      */
     @HEAD
     @Path("/accounts/{accountNumber}")

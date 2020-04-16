@@ -42,6 +42,7 @@ public class RestDriver implements BankDriver {
     @Override
     public void disconnect() throws IOException {
         bank = null;
+        // XXX hier könnte man auch noch webClient.close(); aufrufen. Ich vermute, dass damit allfällig noch offene Sockets geschlossen werden.
     }
 
     @Override
@@ -63,6 +64,7 @@ public class RestDriver implements BankDriver {
 
         @Override
         public Set<String> getAccountNumbers() throws IOException {
+        	// XXX hier hätte man mit einem Conditional-GET arbeiten können (und hätte dann das Resultat speichern müssen).
             try {
                 Response response = accountsTarget
                         .request(MediaType.APPLICATION_JSON_TYPE)
@@ -77,7 +79,8 @@ public class RestDriver implements BankDriver {
         }
 
         @Override
-        public bank.Account getAccount(String number) throws IOException {
+        public bank.Account getAccount(String number) throws IOException {	// XXX als Resultattyp könnten Sie auch Account verwenden, d.h. man darf
+        																	//     den Resultattyp kovariant verstärken.
             try {
                 if(number.trim().equals("")){
                     return null;
@@ -101,13 +104,13 @@ public class RestDriver implements BankDriver {
                         .request()
                         .buildPost(Entity.json(new AccountDTO(owner)))
                         .invoke();
-                AccountDTO accDto = webClient.target(response.getLink("self"))
+                AccountDTO accDto = webClient.target(response.getLink("self")) // XXX Variante wäre auf getLocation() zuzugreifen.
                         .request(MediaType.APPLICATION_JSON_TYPE)
                         .buildGet()
                         .invoke(AccountDTO.class);
                 detectExceptions(response);
                 if (response.getStatusInfo().equals(Status.CREATED)) {
-                    return accDto.getNumber();
+                    return accDto.getNumber();	// XXX die Kontonummer steckt ja eigentlich bereits im Location-Header drin. Sie könnten die Kontonummer auch im Body der Antwort auf den erstem POST Request zurückschicken.
                 } else {
                     return null;
                 }
@@ -124,6 +127,8 @@ public class RestDriver implements BankDriver {
                         .buildDelete()
                         .invoke();
                 detectExceptions(response);
+                // XXX die folgende if-Anweisung würde ich wohl abkürzen zu
+                //     return response.getStatusInfo().equals(Status.OK);
                 if (response.getStatusInfo().equals(Status.OK)) {
                     return true;
                 } else {
@@ -146,7 +151,7 @@ public class RestDriver implements BankDriver {
                         .buildPost(Entity.json(transfer))
                         .invoke();
                 detectExceptions(response);
-            } catch (InactiveException | OverdrawException e) {
+            } catch (InactiveException | OverdrawException e) { // XXX hier köntne/sollte man auch noch die IllegalArgumentException abfangen.
                 throw e;
             } catch (Exception e) {
                 throw new IOException(e);
@@ -173,7 +178,7 @@ public class RestDriver implements BankDriver {
         }
 
         @Override
-        public String getOwner() throws IOException {
+        public String getOwner() throws IOException { // XXX das "throws IOException" können Sie hier weglassen.
             return owner;
         }
 
@@ -242,7 +247,7 @@ public class RestDriver implements BankDriver {
                 while (true) {
                     loadAndCacheAccount();
                     BalanceDTO balanceDto = new BalanceDTO(operator.applyAsDouble(this.balance));
-                    if(balanceDto.getBalance() < 0.0) {
+                    if(balanceDto.getBalance() < 0.0) { // XXX OK, aber eigentlich duplizieren Sie damit Business-Logik vom Server in den Klienten.
                         throw new OverdrawException();
                     }
                     Response updateResp = accountsTarget.path(this.number)
