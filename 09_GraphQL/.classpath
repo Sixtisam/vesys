@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry output="bin/main" kind="src" path="src/main/java">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry output="bin/main" kind="src" path="src/main/resources">
+		<attributes>
+			<attribute name="gradle_scope" value="main"/>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
+	<classpathentry kind="output" path="bin/default"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11/"/>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/2.2.6.RELEASE/488b713b6d7026893b9f3841433292e8d1e8ba2/spring-boot-starter-2.2.6.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter/2.2.6.RELEASE/1a3ef4528148ec17de12a60e2c267b0340234834/spring-boot-starter-2.2.6.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphql-spring-boot-starter/7.0.1/f6994352f94e96bbed4da1816e4a7186711769f/graphql-spring-boot-starter-7.0.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphql-spring-boot-starter/7.0.1/b6984874fc91d3b4a3c5531b2ceaa1f7fd9e6531/graphql-spring-boot-starter-7.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphql-spring-boot-autoconfigure/7.0.1/d8225bb6ade3cfb3daf2b439ac091711c15445f1/graphql-spring-boot-autoconfigure-7.0.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphql-spring-boot-autoconfigure/7.0.1/4b1ecaef0e63c378f008850c2b88321175f93679/graphql-spring-boot-autoconfigure-7.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphql-kickstart-spring-boot-starter-tools/7.0.1/3d072f389f3f94264821618a2b9e9a67925fb0a6/graphql-kickstart-spring-boot-starter-tools-7.0.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphql-kickstart-spring-boot-starter-tools/7.0.1/46c7d69ef13dd3b80d5c948ab67447d6b187d6b6/graphql-kickstart-spring-boot-starter-tools-7.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphql-kickstart-spring-boot-autoconfigure-tools/7.0.1/df4b2d08ac37216a0deff763c406ba60ff3b0ab9/graphql-kickstart-spring-boot-autoconfigure-tools-7.0.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphql-kickstart-spring-boot-autoconfigure-tools/7.0.1/dae1206d90fae212744c0d5b6cf39d691b02b94c/graphql-kickstart-spring-boot-autoconfigure-tools-7.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphql-java-tools/6.0.2/d3f1bf91adfe5f6961c13cf941db15d1a1963988/graphql-java-tools-6.0.2-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphql-java-tools/6.0.2/f3ee04227487da431f7aa9e1aeb7a8aa51463e86/graphql-java-tools-6.0.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.6/1b9adea7bbe0b251818f42fde0bd2988d7e5f20a/gson-2.8.6-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.8.6/9180733b7df8542621dc12e21e87557e8c99b8cb/gson-2.8.6.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.2.6.RELEASE/95fdb0d447335d67d162edfd93eee7f120bee3a7/spring-boot-autoconfigure-2.2.6.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.2.6.RELEASE/3e5766a9d8aa9af1a398dc0ded729dddf7f7dda4/spring-boot-autoconfigure-2.2.6.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.2.6.RELEASE/bc55d7c1a9020afde196285b81a3ab42058063b5/spring-boot-2.2.6.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.2.6.RELEASE/3180b07556790401c4d9d47d634902fa085aa9b0/spring-boot-2.2.6.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/2.2.6.RELEASE/a10f08745226a10cd86fb576d828586ecbd9cdc6/spring-boot-starter-logging-2.2.6.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-logging/2.2.6.RELEASE/4261ce78034c8530bf319046c05b0b7943f80b9c/spring-boot-starter-logging-2.2.6.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/1.3.5/1ad35f11d17abb52426bfe15ea7b4c583795012/jakarta.annotation-api-1.3.5-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/1.3.5/59eb84ee0d616332ff44aba065f3888cf002cd2d/jakarta.annotation-api-1.3.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.2.5.RELEASE/6ef9718e1ee121b1df6372722d30cc5a36bed8d9/spring-context-5.2.5.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.2.5.RELEASE/3aa9a6364151c9e37f18f78106fc6a32805333a6/spring-context-5.2.5.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.2.5.RELEASE/5d889829b8a78ad6d521931ab93a3ce50e5aefc9/spring-aop-5.2.5.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.2.5.RELEASE/4438fdc9914d8fcf5033437c1e915b6f2d9cfb64/spring-aop-5.2.5.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.2.5.RELEASE/4dbf89132cec7df1ab91fb21c3073cd5160a137c/spring-beans-5.2.5.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.2.5.RELEASE/6dd11f183d252605e5dae2552cd918b758390139/spring-beans-5.2.5.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/5.2.5.RELEASE/826a67df1d5d11b73de6c1d8fb1afc784c99609c/spring-expression-5.2.5.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/5.2.5.RELEASE/b763ffd867d55a211e87734cc799513687a6c7bd/spring-expression-5.2.5.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.2.5.RELEASE/1aca0e9547833bd1fd4d9456fa8de27cab415ecc/spring-core-5.2.5.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.2.5.RELEASE/e207390ac307d282ed565db4df7046df04fc52b/spring-core-5.2.5.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.3.71/9451adc6e8341674a29fda58140010f66d1630a5/kotlin-reflect-1.3.71-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.3.71/fca74670d8e6906a3241b3cf3732409ca77b2508/kotlin-reflect-1.3.71.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.71/856241dfa9769f51ce61f69fb6a1e39dbf8bffd0/kotlin-stdlib-1.3.71-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.71/898273189ad22779da6bed88ded39b14cb5fd432/kotlin-stdlib-1.3.71.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-jdk8/1.3.5/13510d7263a23a2b1078a95163331ce6b229cb25/kotlinx-coroutines-jdk8-1.3.5-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-jdk8/1.3.5/effd1e29a3e50de975b2396319eaca40dfc96dc/kotlinx-coroutines-jdk8-1.3.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-reactive/1.3.5/c72c6902bbefd40518050f4a75590469f08ecf47/kotlinx-coroutines-reactive-1.3.5-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-reactive/1.3.5/e07ebba2d47ffe161c7b31ca0daf4792d7c482d6/kotlinx-coroutines-reactive-1.3.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core/1.3.5/a68cdca5ed8605778cb519e3f3b2c9ff8c896970/kotlinx-coroutines-core-1.3.5-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core/1.3.5/b245208f2b844c02dbb506312d4859bde93bce8d/kotlinx-coroutines-core-1.3.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphql-java-servlet/9.1.0/b43be11c5afae8d29f2a410fe68a9d0f2652768d/graphql-java-servlet-9.1.0-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphql-java-servlet/9.1.0/a230204c99a8d7e7c02adc924a1f3d7bb829a63b/graphql-java-servlet-9.1.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphql-java-kickstart/9.1.0/8f0edb61ffd56fac1a0141deacf2773241b75a93/graphql-java-kickstart-9.1.0-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphql-java-kickstart/9.1.0/1e74e4b099ddc1c66bb50bc63e1b1f16d0e53763/graphql-java-kickstart-9.1.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java/graphql-java/14.0/d2c4bba837304c06d504f14437a44fa885da4ea7/graphql-java-14.0-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java/graphql-java/14.0/ddafcd9144c0c014346e70bbbc8443c376cb4a11/graphql-java-14.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.5.1/504edac38ff03cc5ce1d0391abb1416ffad58a99/classmate-1.5.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.5.1/3fe0bed568c62df5e89f4f174c101eab25345b6c/classmate-1.5.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.10.3/5bfd0f78f28182bb4879d6f6229bdcc5ef4f189b/jackson-datatype-jdk8-2.10.3-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jdk8/2.10.3/5fc73a94e771eb044e45e2e3ec9a38660daee6a/jackson-datatype-jdk8-2.10.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-kotlin/2.10.3/cb37d9f6fed77bf39a8e2bdf6924f772092d6f81/jackson-module-kotlin-2.10.3-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-kotlin/2.10.3/d6908a6c5a0ceef2b907eeae9a31fdcdd534fb19/jackson-module-kotlin-2.10.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.10.3/db734f2f42a95d2668b9f9de58d25cfc064e6e4a/jackson-databind-2.10.3-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.10.3/aae92628b5447fa25af79871ca98668da6edd439/jackson-databind-2.10.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.10.3/5b24f64c1a3351a550651b072887ac56a0af120c/jackson-core-2.10.3-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.10.3/f7ee7b55c7d292ac72fbaa7648c089f069c938d2/jackson-core-2.10.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.esotericsoftware/reflectasm/1.11.9/2742ea81fc13f462eb8b76918e884af70dbb9de5/reflectasm-1.11.9-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.esotericsoftware/reflectasm/1.11.9/fd51ad1705d5e27d8785550172a4ab0cb9b8ad23/reflectasm-1.11.9.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.9/8f1cb192e229bc4cd1c900c51171d96706e6d195/commons-lang3-3.9-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.9/122c7cee69b53ed4a7681c03d4ee4c0e2765da5/commons-lang3-3.9.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.2.3/cfd5385e0c5ed1c8a5dce57d86e79cf357153a64/logback-classic-1.2.3-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.2.3/7c4f3c474fb2c041d8028740440937705ebb473a/logback-classic-1.2.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-to-slf4j/2.12.1/163f67b05f1c43ebb5204b9ef5f1e6767360cff0/log4j-to-slf4j-2.12.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-to-slf4j/2.12.1/dfb42ea8ce1a399bcf7218efe8115a0b7ab3788a/log4j-to-slf4j-2.12.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/1.7.30/f9e7f2ae73c3ef9c375a325cea1ef1dcc2613579/jul-to-slf4j-1.7.30-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.slf4j/jul-to-slf4j/1.7.30/d58bebff8cbf70ff52b59208586095f467656c30/jul-to-slf4j-1.7.30.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.30/71a1fdefa224da50f1db6306ce609981e20186c9/slf4j-api-1.7.30-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.30/b5a4b6d16ab13e34a88fae84c35cd5d68cac922c/slf4j-api-1.7.30.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.2.5.RELEASE/9ec1af0e054b0ee31aa6866831cf5979690c354e/spring-jcl-5.2.5.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.2.5.RELEASE/b841f30defd6508f0c21b8c5490b030eb50ac8cb/spring-jcl-5.2.5.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphql-kickstart-spring-support/7.0.1/e9655d20c2e2767edeb3667ef256d840d2852463/graphql-kickstart-spring-support-7.0.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphql-kickstart-spring-support/7.0.1/3c05886ad15c67afd78dd639535a792ef7a120fa/graphql-kickstart-spring-support-7.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.71/bc2d3018bbb572e087e0afee6bedfba35eba125f/kotlin-stdlib-common-1.3.71-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.71/e71c3fef58e26affeb03d675e91fd8abdd44aa7b/kotlin-stdlib-common-1.3.71.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/5991ca87ef1fb5544943d9abc5a9a37583fabe03/annotations-13.0-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.3/e6ffdff8c438d959376c91d94b319457354a84c5/reactive-streams-1.0.3-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.3/d9fb7a7926ffa635b3dcaa5049fb2bfa25b3e7d0/reactive-streams-1.0.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.7.2/14fff5b9b6c84f3b3a1fe0980e8560a555df07c0/antlr4-runtime-4.7.2-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.antlr/antlr4-runtime/4.7.2/e27d8ab4f984f9d186f54da984a6ab1cccac755e/antlr4-runtime-4.7.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java/java-dataloader/2.2.3/a2ba8491db43c8e1bcd4a0e49c24afc957a2ae26/java-dataloader-2.2.3-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java/java-dataloader/2.2.3/e280954c8b421983667bc67b97177dafd2334e74/java-dataloader-2.2.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.10.3/a52bf9c42cb6a029577d0d701785a07554675713/jackson-annotations-2.10.3-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.10.3/f63b3b1da563767d04d2e4d3fc1ae0cdeffebe7/jackson-annotations-2.10.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.2.3/3ebabe69eba0196af9ad3a814f723fb720b9101e/logback-core-1.2.3-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-core/1.2.3/864344400c3d4d92dfeb0a305dc87d953677c03c/logback-core-1.2.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.12.1/72dbe5460db61664f6bbfffb36665fa0bbe8e3ad/log4j-api-2.12.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.12.1/a55e6d987f50a515c9260b0451b4fa217dc539cb/log4j-api-2.12.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/4.0.1/49a9da44db6e6b5f44ce15ddfcfe2b6666151b25/javax.servlet-api-4.0.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/4.0.1/a27082684a2ff0bf397666c3943496c44541d1ca/javax.servlet-api-4.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/javax.websocket/javax.websocket-api/1.1/2219ea40c324a4d6b58cab250e701b3a8c4f34c4/javax.websocket-api-1.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/javax.websocket/javax.websocket-api/1.1/13b8cb26dfb76ac8c28294b06b4b8419e22e9ea1/javax.websocket-api-1.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-websocket/2.2.6.RELEASE/58d7a890d74751f96667f031d8ba185f309324df/spring-boot-starter-websocket-2.2.6.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-websocket/2.2.6.RELEASE/e95fab88766299a832cc98c78a0640cd3c361279/spring-boot-starter-websocket-2.2.6.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.2.6.RELEASE/f106ae013b4143099f376bf436d51ce1a4c9dbc8/spring-boot-starter-web-2.2.6.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-web/2.2.6.RELEASE/4f76853c40cd6c7a0214083b36cd8cfe7c5d7b48/spring-boot-starter-web-2.2.6.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-actuator/2.2.6.RELEASE/3f37a478af3dd720cc28e043781e4797230fbb3e/spring-boot-starter-actuator-2.2.6.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-actuator/2.2.6.RELEASE/5697cb3338f5ca87a1b6a5f05cd4eca18bb23b2d/spring-boot-starter-actuator-2.2.6.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-json/2.2.6.RELEASE/169c7f45b0f7431df5ddfc257d562b7b36e11f26/spring-boot-starter-json-2.2.6.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-json/2.2.6.RELEASE/2bc2b2f052c0aa659a55d29365c9da5bae0cfa74/spring-boot-starter-json-2.2.6.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-validation/2.2.6.RELEASE/2c8ce3c491ba44f516c737c270a4bc7749c20ec7/spring-boot-starter-validation-2.2.6.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-validation/2.2.6.RELEASE/bd3ab3b7992cf594e09f3197f7934138dfe58a8d/spring-boot-starter-validation-2.2.6.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphiql-spring-boot-starter/7.0.1/26a2910d1df44467eb8cab6a52107b26fa7db124/graphiql-spring-boot-starter-7.0.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphiql-spring-boot-starter/7.0.1/3b8e27f964891a843d687bdbe7f3840b54534436/graphiql-spring-boot-starter-7.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/voyager-spring-boot-starter/7.0.1/ae0d7c5cc2adcb795c99bb5c958231de93591123/voyager-spring-boot-starter-7.0.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/voyager-spring-boot-starter/7.0.1/8b32a2a5005041443d1ec4171f70b3350a98c12b/voyager-spring-boot-starter-7.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/altair-spring-boot-starter/7.0.1/4140c17c56452bfdf8f1bb1607f1f6ba1476bc3f/altair-spring-boot-starter-7.0.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/altair-spring-boot-starter/7.0.1/d67eb4e9f2defa639705321f67a9cff58da9024/altair-spring-boot-starter-7.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphiql-spring-boot-autoconfigure/7.0.1/339e2f7dda6a58b9fe3407fec763000d816b96db/graphiql-spring-boot-autoconfigure-7.0.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/graphiql-spring-boot-autoconfigure/7.0.1/ac86ea7c89c3cdc76d9c597b77445139bff8bc95/graphiql-spring-boot-autoconfigure-7.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/voyager-spring-boot-autoconfigure/7.0.1/24b39fc6690443525afbfd3b47eb7bd8268f22c7/voyager-spring-boot-autoconfigure-7.0.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/voyager-spring-boot-autoconfigure/7.0.1/88e4f2d03f9632b038da0eb6afdbae037af71ed4/voyager-spring-boot-autoconfigure-7.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/altair-spring-boot-autoconfigure/7.0.1/edea560336a331b7c3bb98fb0221cb2fe4f01802/altair-spring-boot-autoconfigure-7.0.1-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.graphql-java-kickstart/altair-spring-boot-autoconfigure/7.0.1/69d5b55f95bb5c23bbd4ed4597ea5c7ee41f7954/altair-spring-boot-autoconfigure-7.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator-autoconfigure/2.2.6.RELEASE/3b1a244e047b8602249c9af7bfa36516efac89a8/spring-boot-actuator-autoconfigure-2.2.6.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator-autoconfigure/2.2.6.RELEASE/55815b129a0e0b602b777bb2be5f2b0744e5980b/spring-boot-actuator-autoconfigure-2.2.6.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator/2.2.6.RELEASE/1f73bdb745e3546f26917397358913f65d8f3a23/spring-boot-actuator-2.2.6.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-actuator/2.2.6.RELEASE/7d6baf032f9361d6f8be1485a30d1540e2f0a62/spring-boot-actuator-2.2.6.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/2.2.6.RELEASE/ee922297c6ffd1ee12b86f60818a33b1540a70a4/spring-boot-starter-tomcat-2.2.6.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-tomcat/2.2.6.RELEASE/95da0489ecf8d58033836ae8c6c6f8477de28513/spring-boot-starter-tomcat-2.2.6.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-websocket/5.2.5.RELEASE/ac23cbf897f3a073cd0f2037d705ef00c4b706f1/spring-websocket-5.2.5.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-websocket/5.2.5.RELEASE/c502fe61d1d213fc417ecd7ae2ef790b5c7b0a37/spring-websocket-5.2.5.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.2.5.RELEASE/2388837e6f967bb71399a6076c7070c0b0b1fddc/spring-webmvc-5.2.5.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.2.5.RELEASE/977247d51a5e4e3234b14d3aab910adee4e18e9b/spring-webmvc-5.2.5.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-messaging/5.2.5.RELEASE/c6811001b9d94dbc1bbe0f13961a05eb9b9ee95f/spring-messaging-5.2.5.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-messaging/5.2.5.RELEASE/2dc10dd7a776ea33cdef3bf39bf55bccc39ca693/spring-messaging-5.2.5.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.2.5.RELEASE/113474296c0a70b05db23b6e805a823b768fd61e/spring-web-5.2.5.RELEASE-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.2.5.RELEASE/530da67e70ed5e63f7f3e86f4397e1da6c8e1ff4/spring-web-5.2.5.RELEASE.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.25/45379604b7a254120101009ba09537737daed6f/snakeyaml-1.25-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.25/8b6e01ef661d8378ae6dd7b511a7f2a33fae1421/snakeyaml-1.25.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.hibernate.validator/hibernate-validator/6.0.18.Final/2919b97421e5d6e5c7106fec12bea3cf84b6d95a/hibernate-validator-6.0.18.Final-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.hibernate.validator/hibernate-validator/6.0.18.Final/7fd00bcd87e14b6ba66279282ef15efa30dd2492/hibernate-validator-6.0.18.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.10.3/476b2ac925d7c71dc62bd2a0088f91576e269aeb/jackson-datatype-jsr310-2.10.3-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.datatype/jackson-datatype-jsr310/2.10.3/df773a823e37013779fa247cd13686ff5ee573e3/jackson-datatype-jsr310-2.10.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-parameter-names/2.10.3/337020548be57f525665f2cc80aa1f5c4baaf9/jackson-module-parameter-names-2.10.3-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-parameter-names/2.10.3/33e7a20b23ea284d474e3467062ec07bf8178ef/jackson-module-parameter-names-2.10.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-text/1.8/79ddc6e7b5ea247f5553f4e948863708dbdd5316/commons-text-1.8-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-text/1.8/879a6bde4c0537a25504c72ec7a94ba4099f469c/commons-text-1.8.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-core/1.3.6/345f5fc234c5de1649dc1fdcdde8616b00bf03f7/micrometer-core-1.3.6-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/io.micrometer/micrometer-core/1.3.6/4e281338e0ed8eb3746aea29e6b51e0f7902507c/micrometer-core-1.3.6.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-websocket/9.0.33/cd5d78f468f2d2062368b9b6914d974ac655a938/tomcat-embed-websocket-9.0.33-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-websocket/9.0.33/53abe8b103860ec76e5d49001d4d912e4fc54a21/tomcat-embed-websocket-9.0.33.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/9.0.33/919288a609d410493190cdf5b8b29ccb05dc8b27/tomcat-embed-core-9.0.33-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/9.0.33/a414af8543e38a9c22ba2bdd59efc91db7451e6c/tomcat-embed-core-9.0.33.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/9.0.33/501c14abb0c210f742711ebd0fb79cd31821898d/tomcat-embed-el-9.0.33-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-el/9.0.33/65be3b1cbcf05e3dc6733a5c5fdda47f2eb331eb/tomcat-embed-el-9.0.33.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.validation/jakarta.validation-api/2.0.2/ef429a7f3bc2d2d1784a1135668a857a6aaedf31/jakarta.validation-api-2.0.2-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/jakarta.validation/jakarta.validation-api/2.0.2/5eacc6522521f7eacb081f95cee1e231648461e7/jakarta.validation-api-2.0.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.hdrhistogram/HdrHistogram/2.1.11/1e2b67a2c9d8314c86800384e6ba6694225593/HdrHistogram-2.1.11-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.hdrhistogram/HdrHistogram/2.1.11/1b035a1a4ce5d3441a4a1a331d04839ef487ec49/HdrHistogram-2.1.11.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.latencyutils/LatencyUtils/2.0.3/fbc38259e2077a428984637d811dac542a6a913e/LatencyUtils-2.0.3-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.latencyutils/LatencyUtils/2.0.3/769c0b82cb2421c8256300e907298a9410a2a3d3/LatencyUtils-2.0.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging/3.4.1.Final/4d6248596305dc87ac99451b9c234dba37eac15d/jboss-logging-3.4.1.Final-sources.jar" kind="lib" path="C:/Users/sixkn_000/.gradle/caches/modules-2/files-2.1/org.jboss.logging/jboss-logging/3.4.1.Final/40fd4d696c55793e996d1ff3c475833f836c2498/jboss-logging-3.4.1.Final.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+</classpath>

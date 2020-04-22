@@ -13,8 +13,8 @@ import bank.InactiveException;
 import bank.OverdrawException;
 
 public class Bank implements bank.Bank {
-    private final ConcurrentHashMap<String, Account> accounts = new ConcurrentHashMap<>();
-    private final List<UpdateHandler> updateHandlers = new ArrayList<>();
+    protected final ConcurrentHashMap<String, Account> accounts = new ConcurrentHashMap<>();
+    protected final List<UpdateHandler> updateHandlers = new ArrayList<>();
 
     public void registerUpdateHandler(UpdateHandler handler) {
         updateHandlers.add(handler);
