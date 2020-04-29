@@ -14,9 +14,9 @@ import org.glassfish.tyrus.client.ClientManager;
 import bank.BankDriver2;
 import bank.BankDriver2.UpdateHandler;
 import bank.commands.BankAnswer;
+import bank.commands.BankAnswer.BankExceptionAnswer;
 import bank.commands.BankCommand;
 import bank.commands.CommandBank;
-import bank.commands.BankAnswer.BankExceptionAnswer;
 
 public class WsDriver implements BankDriver2, UpdateHandler {
     private Session session;
@@ -61,6 +61,7 @@ public class WsDriver implements BankDriver2, UpdateHandler {
     @Override
     public void disconnect() throws IOException {
         session.close();
+        bank = null;
     }
 
     @Override
@@ -71,11 +72,11 @@ public class WsDriver implements BankDriver2, UpdateHandler {
     public class Bank extends CommandBank {
 
         @Override
-        protected <T extends BankCommand<? extends BankAnswer<? extends Serializable>>, R extends BankAnswer<? extends Serializable>> R remoteCall(
+        protected <T extends BankCommand<? extends R>, R extends BankAnswer<? extends Serializable>> R remoteCall(
                 T cmd, Class<R> resultType) throws IOException, Exception {
             // send the command.
             session.getBasicRemote().sendObject(cmd);
-            
+
             // waits until next answer is received.
             BankAnswer<?> answer = answerQueue.take();
 

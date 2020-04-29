@@ -42,6 +42,7 @@ public class RestDriver implements BankDriver {
     @Override
     public void disconnect() throws IOException {
         bank = null;
+        webClient.close();
     }
 
     @Override
@@ -79,7 +80,7 @@ public class RestDriver implements BankDriver {
         @Override
         public bank.Account getAccount(String number) throws IOException {
             try {
-                if(number.trim().equals("")){
+                if (number.trim().equals("")) {
                     return null;
                 }
                 AccountDTO accDto = accountsTarget.path(number.trim())
@@ -101,6 +102,7 @@ public class RestDriver implements BankDriver {
                         .request()
                         .buildPost(Entity.json(new AccountDTO(owner)))
                         .invoke();
+                // could extract number from location header or body answer
                 AccountDTO accDto = webClient.target(response.getLink("self"))
                         .request(MediaType.APPLICATION_JSON_TYPE)
                         .buildGet()
@@ -124,12 +126,8 @@ public class RestDriver implements BankDriver {
                         .buildDelete()
                         .invoke();
                 detectExceptions(response);
-                if (response.getStatusInfo().equals(Status.OK)) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } catch(InactiveException e) {
+                return response.getStatusInfo().equals(Status.OK);
+            } catch (InactiveException e) {
                 return false;
             } catch (Exception e) {
                 throw new IOException(e);
@@ -146,7 +144,7 @@ public class RestDriver implements BankDriver {
                         .buildPost(Entity.json(transfer))
                         .invoke();
                 detectExceptions(response);
-            } catch (InactiveException | OverdrawException e) {
+            } catch (InactiveException | OverdrawException | IllegalArgumentException e) {
                 throw e;
             } catch (Exception e) {
                 throw new IOException(e);
@@ -173,7 +171,7 @@ public class RestDriver implements BankDriver {
         }
 
         @Override
-        public String getOwner() throws IOException {
+        public String getOwner() {
             return owner;
         }
 
@@ -194,7 +192,7 @@ public class RestDriver implements BankDriver {
 
         private void loadAndCacheAccount() throws IOException {
             Response resp = loadAccountResponse();
-            if (resp.getStatusInfo().equals(Status.NOT_MODIFIED)) {
+            if (resp.getStatusInfo().equals(Status.NOT_MODIFIED) || resp.getStatusInfo().equals(Status.NOT_FOUND)) {
                 return;
             }
             AccountDTO acc = resp.readEntity(AccountDTO.class);
@@ -217,7 +215,8 @@ public class RestDriver implements BankDriver {
 
         @Override
         public void deposit(double amount) throws InactiveException, IOException {
-            if(amount < 0) throw new IllegalArgumentException();
+            if (amount < 0)
+                throw new IllegalArgumentException();
             try {
                 updateBalance(balance -> balance + amount);
             } catch (OverdrawException e) {
@@ -227,7 +226,8 @@ public class RestDriver implements BankDriver {
 
         @Override
         public void withdraw(double amount) throws InactiveException, OverdrawException, IOException {
-            if(amount < 0) throw new IllegalArgumentException();
+            if (amount < 0)
+                throw new IllegalArgumentException();
             updateBalance(balance -> balance - amount);
         }
 
@@ -242,7 +242,7 @@ public class RestDriver implements BankDriver {
                 while (true) {
                     loadAndCacheAccount();
                     BalanceDTO balanceDto = new BalanceDTO(operator.applyAsDouble(this.balance));
-                    if(balanceDto.getBalance() < 0.0) {
+                    if (balanceDto.getBalance() < 0.0) {
                         throw new OverdrawException();
                     }
                     Response updateResp = accountsTarget.path(this.number)

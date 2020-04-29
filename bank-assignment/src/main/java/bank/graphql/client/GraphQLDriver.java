@@ -25,15 +25,14 @@ import bank.OverdrawException;
 public class GraphQLDriver implements BankDriver {
     private HttpClient client;
     private HttpRequest.Builder requestBuilder;
-    private final Bank bank;
+    private Bank bank;
 
     public GraphQLDriver() {
-        bank = new Bank();
     }
 
     @Override
     public void connect(String[] args) throws IOException {
-        // TODO Auto-generated method stub
+        bank = new Bank();
         client = HttpClient.newBuilder().build();
         requestBuilder = HttpRequest.newBuilder()
                 .uri(URI.create("http://localhost:8080/graphql"))
@@ -42,6 +41,9 @@ public class GraphQLDriver implements BankDriver {
 
     @Override
     public void disconnect() throws IOException {
+        bank = null;
+        requestBuilder = null;
+        client = null;
     }
 
     @Override

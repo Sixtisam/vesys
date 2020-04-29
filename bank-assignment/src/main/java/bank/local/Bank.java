@@ -1,11 +1,11 @@
 package bank.local;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 
 import bank.BankDriver2.UpdateHandler;
@@ -14,7 +14,7 @@ import bank.OverdrawException;
 
 public class Bank implements bank.Bank {
     protected final ConcurrentHashMap<String, Account> accounts = new ConcurrentHashMap<>();
-    protected final List<UpdateHandler> updateHandlers = new ArrayList<>();
+    protected final List<UpdateHandler> updateHandlers = new CopyOnWriteArrayList<>();
 
     public void registerUpdateHandler(UpdateHandler handler) {
         updateHandlers.add(handler);
@@ -54,9 +54,9 @@ public class Bank implements bank.Bank {
     @Override
     public boolean closeAccount(String number) {
         Account acc = accounts.get(number);
-        if (acc != null) {
+        if (acc != null && acc.close()) {
             notify(number);
-            return acc.close();
+            return true;
         } else {
             return false;
         }

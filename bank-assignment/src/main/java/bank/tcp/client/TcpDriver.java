@@ -8,9 +8,9 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 import bank.commands.BankAnswer;
+import bank.commands.BankAnswer.BankExceptionAnswer;
 import bank.commands.BankCommand;
 import bank.commands.CommandBank;
-import bank.commands.BankAnswer.BankExceptionAnswer;
 
 public class TcpDriver implements bank.BankDriver {
     private Bank bank = null;
@@ -45,7 +45,7 @@ public class TcpDriver implements bank.BankDriver {
     public class Bank extends CommandBank {
 
         @Override
-        protected <T extends BankCommand<? extends BankAnswer<? extends Serializable>>, R extends BankAnswer<? extends Serializable>> R remoteCall(
+        protected <T extends BankCommand<? extends R>, R extends BankAnswer<? extends Serializable>> R remoteCall(
                 T cmd, Class<R> resultType) throws IOException, Exception {
             try {
                 out.writeObject(cmd);

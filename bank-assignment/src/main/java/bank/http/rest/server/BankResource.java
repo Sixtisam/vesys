@@ -9,7 +9,6 @@ import javax.inject.Singleton;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
-import javax.ws.rs.HEAD;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -22,7 +21,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
-import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriBuilder;
 import javax.ws.rs.core.UriInfo;
 
@@ -44,7 +42,7 @@ public class BankResource {
     UriInfo resourceUriInfo;
 
     protected String buildETag(Bank.Account acc) {
-        return "\"" + acc.hashCode() + "\"";
+        return "" + acc.hashCode();
     }
 
     /**
@@ -93,23 +91,6 @@ public class BankResource {
             return builder.build();
         } else {
             return Response.ok(acc).tag(buildETag(acc)).build();
-        }
-    }
-
-    /**
-     * not used but still implemented
-     */
-    @HEAD
-    @Path("/accounts/{accountNumber}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response accountExists(@PathParam("accountNumber") String accountNumber) throws IOException {
-        Account acc = bank.getAccount(accountNumber);
-        if (acc == null) {
-            throw new NotFoundException();
-        } else if (acc.isActive()) {
-            return Response.ok().build();
-        } else {
-            return Response.status(Status.GONE).build();
         }
     }
 

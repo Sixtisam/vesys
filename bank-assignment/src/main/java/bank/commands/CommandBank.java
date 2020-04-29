@@ -18,10 +18,10 @@ import bank.commands.BankCommand.BankAccountGetActiveCommand;
 import bank.commands.BankCommand.BankAccountGetBalanceCommand;
 import bank.commands.BankCommand.BankAccountGetOwnerCommand;
 import bank.commands.BankCommand.BankAccountModifyBalanceCommand;
+import bank.commands.BankCommand.BankAccountModifyBalanceCommand.Type;
 import bank.commands.BankCommand.BankCreateAccountCommand;
 import bank.commands.BankCommand.BankGetAccountNumbersCommand;
 import bank.commands.BankCommand.BankTransferCommand;
-import bank.commands.BankCommand.BankAccountModifyBalanceCommand.Type;
 
 /**
  * A bank that can be used as a proxy. Each bank method will result in a call of
@@ -33,7 +33,7 @@ import bank.commands.BankCommand.BankAccountModifyBalanceCommand.Type;
  */
 public abstract class CommandBank implements Bank {
 
-    protected abstract <T extends BankCommand<? extends BankAnswer<? extends Serializable>>, R extends BankAnswer<? extends Serializable>> R remoteCall(
+    protected abstract <T extends BankCommand<? extends R>, R extends BankAnswer<? extends Serializable>> R remoteCall(
             T command, Class<R> answer) throws Exception;
 
     @Override
@@ -103,7 +103,7 @@ public abstract class CommandBank implements Bank {
         public String getNumber() {
             return number;
         }
-        
+
         @Override
         public String getOwner() {
             return owner;
@@ -117,7 +117,6 @@ public abstract class CommandBank implements Bank {
                 throw new IOException(e);
             }
         }
-
 
         @Override
         public boolean isActive() throws IOException {
