@@ -5,3 +5,4 @@ bank.udp.client.UdpDriver localhost 1234
 bank.http.rest.client.RestDriver localhost 8080
 bank.ws.client.WsDriver localhost 2222
 bank.graphql.client.GraphQLDriver localhost 8080
+bank.amqp.client.AmqpDriver

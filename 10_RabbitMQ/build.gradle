@@ -1,0 +1,30 @@
+plugins {
+	id 'java'
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+compileJava.options.encoding = 'UTF-8'
+
+dependencies {
+	implementation 'com.rabbitmq:amqp-client:5.9.0'
+}
+
+
+task gradleWrapper(type: Wrapper)
+task zip(type: Zip) {
+	dependsOn gradleWrapper
+	from projectDir
+
+	include 'build.gradle'
+	include 'gradlew'
+	include 'gradlew.bat'
+	include 'gradle/**'
+
+	include 'src/main/java/ch/fhnw/ds/**'
+}
