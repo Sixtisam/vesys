@@ -27,6 +27,8 @@ public class MutationResolver implements GraphQLMutationResolver {
             bank.transfer(bank.getAccount(from), bank.getAccount(to), amount);
 
         } catch (OverdrawException | InactiveException | IllegalArgumentException e) {
+        	// XXX hier könnte auch eine NPE geworfen werden (falls zur Kontonummer kein Konto existiert).
+        	//     => ich würde direkt Exception (oder Trowable) abfangen.
             throw new ApplicationException(e);
         }
     }

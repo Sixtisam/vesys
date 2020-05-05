@@ -71,7 +71,7 @@ public class GraphQLDriver implements BankDriver {
         String requestBody = om.writeValueAsString(new GraphQLRequest(query, variables));
 
         HttpRequest request = requestBuilder
-                .header("Content-Type", "application/json; charset=utf-8")
+                .header("Content-Type", "application/json; charset=utf-8") // XXX das könnte auch bereits im connect gesetzt/definiert werden.
                 .POST(BodyPublishers.ofString(requestBody, Charset.forName("UTF-8")))
                 .build();
 
@@ -179,7 +179,7 @@ public class GraphQLDriver implements BankDriver {
             }
 
             @Override
-            public String getNumber() throws IOException {
+            public String getNumber() throws IOException { // XXX das "throws IOException" wäre hier nicht nötig
                 return number;
             }
 

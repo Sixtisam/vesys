@@ -3,8 +3,6 @@ package bank.graphql.server;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import javax.servlet.annotation.WebServlet;
-
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
