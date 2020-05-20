@@ -30,7 +30,7 @@ if (currentOS.isWindows()) {
 dependencies {
 	implementation 'org.glassfish.jaxb:jaxb-core:2.3.0.1'
 	implementation 'com.sun.xml.bind:jaxb-impl:2.3.1'
-
+	implementation 'com.typesafe.akka:akka-remote_2.13:2.6.5'
 	// https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-servlet
 	implementation group: 'org.eclipse.jetty', name: 'jetty-servlet', version: '9.4.28.v20200408'
 	
