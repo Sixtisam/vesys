@@ -106,6 +106,8 @@ public class AmqpDriver implements BankDriver2, UpdateHandler {
 
     public void onMessageDelivered(String consumer, Delivery message) {
         try {
+        	// XXX das Konvertieren eines byte[] in ein BankCommand/BankAnswer oder umgekehrt taucht immer wieder auf,
+        	//     und es würde sich wohl lohnen, diese Zeilen in eine separate Methode zu verschieben.
             ByteArrayInputStream bais = new ByteArrayInputStream(message.getBody());
             ObjectInputStream ois = new ObjectInputStream(bais);
             Object obj = ois.readObject();

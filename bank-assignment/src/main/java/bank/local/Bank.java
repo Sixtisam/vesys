@@ -21,6 +21,8 @@ public class Bank implements bank.Bank {
     }
 
     protected void notify(String number) {
+    	// XXX noify finde ich ein etwas ungünstger Methodenname. Pass eigentlich schon, kann aber leicht mit den
+    	//     Synchronisationsmethoden wait/notify verwechselt werden.
         updateHandlers.forEach(uH -> {
             try {
                 uH.accountChanged(number);
@@ -55,7 +57,7 @@ public class Bank implements bank.Bank {
     public boolean closeAccount(String number) {
         Account acc = accounts.get(number);
         if (acc != null && acc.close()) {
-            notify(number);
+            notify(number);	// XXX richtig, alledings findet auch im close selber bereits ein notify statt.
             return true;
         } else {
             return false;
@@ -159,7 +161,7 @@ public class Bank implements bank.Bank {
             Bank.this.notify(number);
         }
 
-        public synchronized boolean close() {
+        public synchronized boolean close() {	// XXX diese close-Methode wird ja nur aus dem Bank.close aufgerufen, d.h. sie könnte ohne Probleme private deklariert werden.
             if (getBalance() == 0.0 && isActive()) {
                 active = false;
                 Bank.this.notify(number);

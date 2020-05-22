@@ -95,6 +95,7 @@ public class AmqpServer implements UpdateHandler {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             ObjectOutputStream oos = new ObjectOutputStream(baos);
             oos.writeObject(answer);
+            // XXX hier frage ich mich immer ob nicht ein flush oder ein close nötig wäre!
 
             // the designated queue specified by the sender
             String destQueue = message.getProperties().getReplyTo();
