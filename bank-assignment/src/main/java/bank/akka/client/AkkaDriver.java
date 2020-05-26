@@ -40,17 +40,21 @@ public class AkkaDriver implements BankDriver2 {
         Config config = ConfigFactory.load().getConfig("BankClient");
         system = ActorSystem.create("Bank", config);
 
-        ActorRef clientActor = system.actorOf(Props.create(ClientActor.class, updateHandlers));
+        ActorRef clientActor = system.actorOf(Props.create(ClientNotificationActor.class, updateHandlers));
 
         serverActor = system.actorSelection("akka://Bank@127.0.0.1:25520/user/BankServer");
         // subscribe to server
         serverActor.tell(clientActor, clientActor);
     }
 
-    public static class ClientActor extends AbstractActor {
+    /**
+     * Handles any {@link AccountChangedAnswer} objects
+     *
+     */
+    public static class ClientNotificationActor extends AbstractActor {
         private final List<UpdateHandler> updateHandlers;
 
-        public ClientActor(List<UpdateHandler> updateHandlers) {
+        public ClientNotificationActor(List<UpdateHandler> updateHandlers) {
             super();
             this.updateHandlers = updateHandlers;
         }
@@ -95,6 +99,7 @@ public class AkkaDriver implements BankDriver2 {
         protected <T extends BankCommand<? extends R>, R extends BankAnswer<? extends Serializable>> R remoteCall(T command, Class<R> answerType)
                 throws Exception {
             Timeout timeout = Timeout.create(Duration.ofSeconds(2));
+            // ask the server actor for result
             Future<Object> future = Patterns.ask(serverActor, command, timeout);
             @SuppressWarnings("unchecked")
             R answer = (R) Await.result(future, timeout.duration());

@@ -30,9 +30,6 @@ public class AkkaServer implements UpdateHandler {
         System.in.read();
     }
 
-    public AkkaServer() {
-    }
-
     public void start() {
         bank = new Bank();
         bank.registerUpdateHandler(this);
@@ -41,12 +38,17 @@ public class AkkaServer implements UpdateHandler {
         system = ActorSystem.create("Bank", config);
 
         serverActor = system.actorOf(Props.create(ServerActor.class, bank), "BankServer");
-        System.out.println("Akka system started");
     }
 
     public void accountChanged(String id) throws IOException {
         AccountChangedAnswer answer = new AccountChangedAnswer(id);
-        clients.forEach(c -> c.tell(answer, serverActor));
+        // cleanup: remove all terminated actors
+        clients.removeIf(ActorRef::isTerminated);
+        
+        // notify all actors
+        clients.forEach(c -> {
+            c.tell(answer, serverActor);
+        });
     }
 
     public static class ServerActor extends AbstractActor {
