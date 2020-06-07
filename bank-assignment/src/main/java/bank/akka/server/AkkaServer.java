@@ -27,7 +27,7 @@ public class AkkaServer implements UpdateHandler {
 
     public static void main(String[] args) throws IOException, TimeoutException {
         new AkkaServer().start();
-        System.in.read();
+        System.in.read(); // XXX das ist gar nicht nótig, das Aktorensystem läuft auch sonst weiter.
     }
 
     public void start() {
@@ -53,7 +53,7 @@ public class AkkaServer implements UpdateHandler {
 
     public static class ServerActor extends AbstractActor {
 
-        private Bank bank;
+        private Bank bank; // XXX würde ich final deklarieren.
 
         public ServerActor(Bank bank) {
             this.bank = bank;

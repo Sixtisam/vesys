@@ -27,6 +27,8 @@ import scala.concurrent.Future;
 
 public class AkkaDriver implements BankDriver2 {
     private final List<UpdateHandler> updateHandlers = new ArrayList<>();
+    // XXX ArrayList ist nicht threadsafe, aber in diesem Kontext sird concurrent von Klienten und vom Akka-Thread zugegriffen, d.h. wenn während
+    //     einer Notifikation ein neuer Handler angemeldet wird, dann wird eine CME geworfen.
 
     private ActorSelection serverActor;
 
@@ -43,6 +45,8 @@ public class AkkaDriver implements BankDriver2 {
         ActorRef clientActor = system.actorOf(Props.create(ClientNotificationActor.class, updateHandlers));
 
         serverActor = system.actorSelection("akka://Bank@127.0.0.1:25520/user/BankServer");
+        // XXX die Referenz auf den Server-Aktor sollte als Parameter übergeben werden, oder zumindest host+port
+        //     Ich habe eben gesehen, dass Sie in den vorderinierten Konfigurationen einen Pfad übergeben, aber dieser wird hier noch ignoeriert.
         // subscribe to server
         serverActor.tell(clientActor, clientActor);
     }
@@ -52,6 +56,10 @@ public class AkkaDriver implements BankDriver2 {
      *
      */
     public static class ClientNotificationActor extends AbstractActor {
+    	// XXX variante wäre, die Klasse als ELementklasse zu deklarieren (ohne static), dann könnte direkt auf das updateHandlers der äusseren Klasse zugegriffen werden.
+    	//     So geht es auch, aber etwas tricky ist, dass in der Methode registerUpdateHandler auf die Liste in AkkaDriver zugegriffen wird, und diese Änderung hier
+    	//     im Aktor sichtbar ist (da dieselbe Referenz verwendet wird). Alles richtig, aber der Code basiert darauf, dass die Referenz gesetzt wird und nicht
+    	//     etwa eine Kopie davon gemacht wird.
         private final List<UpdateHandler> updateHandlers;
 
         public ClientNotificationActor(List<UpdateHandler> updateHandlers) {
