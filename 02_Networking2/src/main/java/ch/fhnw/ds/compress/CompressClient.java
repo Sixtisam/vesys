@@ -43,7 +43,7 @@ public class CompressClient {
 		final Socket sock = new Socket(server, port);
 
 		// Send uncompressed byte stream to server
-		// Lösung:
+		// Lï¿½sung:
 		new Thread(() -> {
 			try {
 				sendBytes(sock, fileIn); // Bereits vorher da
@@ -51,7 +51,7 @@ public class CompressClient {
 				e.printStackTrace();
 			}
 		}).start();
-		// Lösung ende
+		// Lï¿½sung ende
 
 		// Receive compressed byte stream from server
 		InputStream sockIn = sock.getInputStream();

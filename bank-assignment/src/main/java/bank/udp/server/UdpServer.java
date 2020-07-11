@@ -102,7 +102,6 @@ public class UdpServer {
                     out.writeInt(clientNr);
                     data = baos.toByteArray();
                 } else {
-                    // randomly destroy response to test correct packet loss handling
                     data = handleRequest(in, baos, out);
                 }
 

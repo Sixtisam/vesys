@@ -91,7 +91,7 @@ public class AmqpDriver implements BankDriver2, UpdateHandler {
             ObjectInputStream ois = new ObjectInputStream(bais);
             Object obj = ois.readObject();
             if (obj instanceof AccountChangedAnswer) {
-                System.out.println("Received account changed answer");
+                System.out.println("<- Received account changed answer");
                 AccountChangedAnswer answer = (AccountChangedAnswer) obj;
                 // inform listeners
                 accountChanged(answer.getData());
@@ -110,7 +110,6 @@ public class AmqpDriver implements BankDriver2, UpdateHandler {
             ObjectInputStream ois = new ObjectInputStream(bais);
             Object obj = ois.readObject();
             if (obj instanceof BankAnswer<?>) {
-                System.out.println("Received bank answer " + obj.getClass().getName());
                 BankAnswer<?> answer = (BankAnswer<?>) obj;
                 receivedAnswers.put(answer);
             } else {
@@ -165,10 +164,11 @@ public class AmqpDriver implements BankDriver2, UpdateHandler {
             BasicProperties props = new BasicProperties.Builder().replyTo(answerQueueName).build();
             // publish command to server
             channel.basicPublish("", AmqpServer.SERVER_QUEUE_NAME, props, baos.toByteArray());
-            System.out.println("Command is published to server");
+            System.out.println("-> Command published " + cmd.getClass().getName());
 
             // waits until answer is received.
             BankAnswer<?> answer = receivedAnswers.take();
+            System.out.println("<- Command received " + answer.getClass().getSimpleName());
             // decide if exception or valid result
             if (answer instanceof BankExceptionAnswer) {
                 throw ((BankExceptionAnswer) answer).getData();

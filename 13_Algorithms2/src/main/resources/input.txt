@@ -1,0 +1,116 @@
+put Alder Philipp
+put Baumann Alain
+put Beimler Yannik
+put Benz Yannic
+put Brönnimann Nick
+put Buman Kevin
+put Cadaroski Ismail
+put Dubach Kevin
+put Erb Max
+put Fabel Oliver
+put Frei Dominik
+put Gnos Jürg
+put Gramm Fiorenzo
+put Hammer Florian
+put Hauser Marco
+put Hauser Pascal
+put Hemmi Janosch
+put Hövel Thomas
+put Hug Carole
+put Johner Melvin
+put Kamber Pascal
+put Kerkmann Felix
+put Keusch Samuel
+put Klamroth Andreas
+put Kuonen Jan
+put Landös Stefan
+put Ledermann Turan
+put Leemann Sacha
+put Matter Naemi
+put Meier Pascal
+put Meier Stefan
+put Muggli Philipp
+put Müller Lukas
+put Müller Thomas
+put Näf Livio
+put Nöthiger Mike
+put Parisi Corrado
+put Ramser Marc
+put Richner Christian
+put Rölli Fabian
+put Roth Moritz
+put Roussis Raphael
+put Ruzinski Jehuda
+put Salloum Nadim
+put Saravia Cossio Julischka
+put Schoch Robin
+put Schorr Elias
+put Sivakumar Mithusan
+put Sonnenschein Paul
+put Umbricht Andreas
+put Vögele Christoph
+put Vogelsang Rico
+put Vranken Dimitri
+put Wagner Stephan
+put Waldmeier Marco
+put Wassermann Nicolai
+put Zumbrunnen Raphael
+
+
+get Alder
+get Baumann
+get Beimler
+get Benz
+get Brönnimann
+get Buman
+get Cadaroski
+get Dubach
+get Erb
+get Fabel
+get Frei
+get Gnos
+get Gramm
+get Hammer
+get Hauser
+get Hauser
+get Hemmi
+get Hövel
+get Hug
+get Johner
+get Kamber
+get Kerkmann
+get Keusch
+get Klamroth
+get Kuonen
+get Landös
+get Ledermann
+get Leemann
+get Matter
+get Meier
+get Meier
+get Muggli
+get Müller
+get Müller
+get Näf
+get Nöthiger
+get Parisi
+get Ramser
+get Richner
+get Rölli
+get Roth
+get Roussis
+get Ruzinski
+get Salloum
+get Saravia Cossio
+get Schoch
+get Schorr
+get Sivakumar
+get Sonnenschein
+get Umbricht
+get Vögele
+get Vogelsang
+get Vranken
+get Wagner
+get Waldmeier
+get Wassermann
+get Zumbrunnen

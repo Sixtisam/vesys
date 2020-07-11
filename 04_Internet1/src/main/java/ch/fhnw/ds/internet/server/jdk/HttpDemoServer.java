@@ -32,6 +32,9 @@ public class HttpDemoServer {
 	public static void main(String[] args) throws IOException {
 		HttpServer server = HttpServer.create(new InetSocketAddress(80), 0);
 		server.createContext("/date", new DateHandler());
+		server.createContext("/test", (HttpExchange exchange ) -> {
+		    
+		});
 		server.createContext("/bank", new BankHandler()).getFilters().add(new ParameterParser());
 		server.createContext("/echo", new EchoHandler()).getFilters().add(new ParameterParser());
 		
